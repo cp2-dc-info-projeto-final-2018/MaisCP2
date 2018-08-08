@@ -8,14 +8,14 @@
 ### RNF02
   O tamanho dos arquivos deverá ser, no máximo, 10MB.
 
-###RNF03
+### RNF03
   O site deve ter uma interface amigável e fácil de ser compreendida para o melhor aprendizado.
 
-###RNF04
+### RNF04
   O tempo de refresh do site deve ser de, no máximo, 1 segundo.
 
-###RNF05
+### RNF05
   O site deverá ser responsivo.
 
-###RNF06
+### RNF06
   Malwares e Vírus serão bloqueados ao tentar invadir o site.
