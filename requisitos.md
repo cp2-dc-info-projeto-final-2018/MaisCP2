@@ -8,6 +8,9 @@
 ### RF02
   O site deverá permitir que threads de discussão sejam criadas para a discussão de assuntos.
 
+### RF03
+  O site deverá ser organizado em matérias, e dentro de cada matéria haverão as threads específicas da área.
+
 ## Requisitos Não Funcionais
 
 ### RNF01
