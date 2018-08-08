@@ -26,6 +26,9 @@
 ### RF08
   Deverá haver um meio de notificar alguém quandos os mesmos forem mencionados em uma postagem através dos nomes de usuário, porém sem exagero.
 
+### RF09
+  Quando alguém responder um comentário da thread, a pessoa que fez a postagem será notificado do mesmo.
+  
 ## Requisitos Não Funcionais
 
 ### RNF01
