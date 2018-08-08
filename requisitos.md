@@ -17,6 +17,8 @@
 ### RF05
   A diretoria, a secretaria e os responsáveis dos alunos também deverão ter acesso, sendo propriamente identificados. A diretoria e a secretária tendo contas próprias e os responsáveis tendo contas vinculadas as dos filhos.
 
+### RF06
+  Permitir o anexo de PDFs, imagens e links aos posts.
 
 ## Requisitos Não Funcionais
 
