@@ -5,6 +5,8 @@
 ### RF01
   Novos usuários deveram se cadastrar inserindo nome, data, matrícula, email, um nome de usuário e senha.
 
+### RF02
+  O site deverá permitir que threads de discussão sejam criadas para a discussão de assuntos.
 
 ## Requisitos Não Funcionais
 
