@@ -13,3 +13,6 @@
 
 ###RNF04
   O tempo de refresh do site deve ser de, no máximo, 1 segundo.
+
+###RNF05
+  O site deverá ser responsivo.
