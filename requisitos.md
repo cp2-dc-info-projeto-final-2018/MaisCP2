@@ -10,3 +10,6 @@
 
 ###RNF03
   O site deve ter uma interface amigável e fácil de ser compreendida para o melhor aprendizado.
+
+###RNF04
+  O tempo de refresh do site deve ser de, no máximo, 1 segundo.
