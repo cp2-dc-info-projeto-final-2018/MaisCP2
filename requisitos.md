@@ -20,6 +20,9 @@
 ### RF06
   Permitir o anexo de PDFs, imagens e links aos posts.
 
+###RF07
+  Filtragem de linguagem imprópria, para que não hajam palavras de baixo calão e ofensas.
+
 ## Requisitos Não Funcionais
 
 ### RNF01
