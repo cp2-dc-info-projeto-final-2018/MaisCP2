@@ -20,8 +20,11 @@
 ### RF06
   Permitir o anexo de PDFs, imagens e links aos posts.
 
-###RF07
+### RF07
   Filtragem de linguagem imprópria, para que não hajam palavras de baixo calão e ofensas.
+
+### RF08
+  Deverá haver um meio de notificar alguém quandos os mesmos forem mencionados em uma postagem através dos nomes de usuário, porém sem exagero.
 
 ## Requisitos Não Funcionais
 
