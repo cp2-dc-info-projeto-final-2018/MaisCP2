@@ -14,7 +14,8 @@
 ### RF04
   As threads de discussão deverão ter a série da dúvida(ou explicação) e a data.
 
-
+### RF05
+  A diretoria, a secretaria e os responsáveis dos alunos também deverão ter acesso, sendo propriamente identificados. A diretoria e a secretária tendo contas próprias e os responsáveis tendo contas vinculadas as dos filhos.
 
 
 ## Requisitos Não Funcionais
