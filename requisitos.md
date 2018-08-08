@@ -2,6 +2,9 @@
 
 ## Requisitos Funcionais
 
+
+## Requisitos Não Funcionais
+
 ### RF01
   Novos usuários deveram se cadastrar inserindo nome, data, matrícula, email, um nome de usuário e senha.
 
