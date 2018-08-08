@@ -16,3 +16,6 @@
 
 ###RNF05
   O site deverá ser responsivo.
+
+###RNF06
+  Malwares e Vírus serão bloqueados ao tentar invadir o site.
