@@ -11,6 +11,12 @@
 ### RF03
   O site deverá ser organizado em matérias, e dentro de cada matéria haverão as threads específicas da área.
 
+### RF04
+  As threads de discussão deverão ter a série da dúvida(ou explicação) e a data.
+
+
+
+
 ## Requisitos Não Funcionais
 
 ### RNF01
