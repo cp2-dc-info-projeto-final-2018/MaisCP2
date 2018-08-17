@@ -43,7 +43,7 @@
   - Podendo avaliar as melhores respostas.
 
 # CD07 - Gerenciar Thread
-**Atores:Professor**
+**Atores: Professor**
 
 **Pré-condições: Ser um usuário Professor**
 
@@ -53,7 +53,7 @@
 
 
 # CD08 - Gerenciar Usuário
-**Atores:Professor**
+**Atores: Professor**
 
 **Pré-condições: Ser um usuário Professor**
 
