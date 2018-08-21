@@ -32,10 +32,30 @@
 1. O usuário informa seu username e sua senha.
 2. O sistema verifica as informações fornecidas e caso as mesmas sejam válidas, o usuário consegue o acesso.
 
-
 # CD03 - Alterando Dados
 
+**Atores:** Professor e Aluno
+
+**Pré-condições:**  O usuário deverá ter realizado o login.
+
+
+**Fluxo principal:**
+1.  O usuário acessa seu perfil e escolhe a opção de alterar dados.
+2. O sistema transfere o usuário para o formulário de alterações.
+3. O usuário edita os campos que deseja alterar.
+4. O sistema verifica novamente a senha do usuário para permitir uma alteração segura.
+
 # CD04 - Visualizar Atividade
+
+**Atores:** Professor, aluno e observador
+
+**Pré-condições:** Não há condições.
+
+**Fluxo principal:**
+1. O usuário acessa o perfil desejado para visualizar as atividades.
+2. O usuário seleciona quais atividades quer visualizar.
+3. O sistema exibe as atividades realizadas.
+
 
 # CD05 - Pesquisar Thread
 
