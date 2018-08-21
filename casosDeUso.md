@@ -2,8 +2,8 @@
 
 # Sumário
 
-- [CDU 01 - Solicitar Cadastro](#cdu-01---solicitar-cadastro)
-- [CDU 02 - Autenticar](#cdu-02---autenticar)
+- [CDU 01 - Solicitar Cadastro](#cd01---solicitar-cadastro)
+- [CDU 02 - Autenticar](#cd02---autenticar)
 - [CDU 03 - Alterando Dados](#cdu-03---alterando-dados)
 - [CDU 04 - Visualizar Atividade](#cdu-04---visualizar-atividade)
 - [CDU 05 - Pesquisar Thread](#cdu-05---pesquisar-thread)
