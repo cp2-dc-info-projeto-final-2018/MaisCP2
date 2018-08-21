@@ -78,8 +78,7 @@
 2. Caso haja uma alteração na dúvida dentro da mesma thread, o usuário poderá editá-la para adequar-se aos novos parâmetros.
   - O título e a descrição da thread poderão ser alteradas, mas a matéria e a série não.
   - Caso a thread tenha sido concluída o usuário poderá fechá-la. Ou seja, encerrar o envio de novas respostas.
-3. Outros usuários do site poderão enviar respostas a thread.
-  - Podendo avaliar as melhores respostas.
+
 
 # CD07 - Manter Postagens
 **Atores: Aluno e Professor**
@@ -87,8 +86,8 @@
 **Pré-condições: Estar cadastrado no site**
 
 **Fluxo principal:**
-1. O usuário pode responder a uma thread, não havendo limite para a quantidade de respostas.  
-2. Caso haja um linguajar ofensivo ou inapropriado o Professor poderá excluir o comentário ou a thread, pois ele tem um nível superior de acesso.
+1. O usuário pode responder a uma thread.  
+2. O Professor poderá excluir o comentário ou a thread, pois ele tem um nível superior de acesso.
 3. O usuário pode editar as respostas que ele deu.   
 
 # CD08 - Gerenciar Usuário
@@ -97,8 +96,8 @@
 **Pré-condições: Ser um usuário Professor**
 
 **Fluxo principal:**
-1. O usuário Professor poderá ver os dados de todos os usuários, afim de checar as informações.
-2. Poderá banir a conta de algum usuário caso o mesmo ofender alguém.
+1. O usuário Professor poderá ver os dados de todos os usuários.
+2. Poderá banir a conta de algum usuário.
 
 # CD09 - Avaliar
 **Atores: Aluno e Professor**
