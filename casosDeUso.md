@@ -4,12 +4,15 @@
 
 - [CDU 01 - Solicitar Cadastro](#cd01---solicitar-cadastro)
 - [CDU 02 - Autenticar](#cd02---autenticar)
-- [CDU 03 - Alterando Dados](#cdu-03---alterando-dados)
-- [CDU 04 - Visualizar Atividade](#cdu-04---visualizar-atividade)
-- [CDU 05 - Pesquisar Thread](#cdu-05---pesquisar-thread)
-- [CDU 06 - Manter Thread](#cdu-06---manter-thread)
-- [CDU 07 - Gerenciar Thread](#cdu-07---gerenciar-thread)
-- [CDU 08 - Gerenciar Usuário](#cdu-08---gerenciar-usuário)
+- [CDU 03 - Alterando Dados](#cd03---alterando-dados)
+- [CDU 04 - Visualizar Atividade](#cd04---visualizar-atividade)
+- [CDU 05 - Pesquisar Thread](#cd05---pesquisar-thread)
+- [CDU 06 - Manter Thread](#cd06---manter-thread)
+- [CDU 07 - Manter Postagens](#cd07---manter-postagens)
+- [CDU 08 - Gerenciar Usuário](#cd08---gerenciar-usuário)
+- [CDU 09 - Avaliar](#cd09---avaliar)
+- [CDU 10 - Aprovar Cadastro](#cd10---aprovar-cadastro)
+
 
 # CD01 - Solicitar Cadastro
 **Atores:** Aluno e professor
@@ -19,9 +22,8 @@
 **Fluxo principal:**
 1. O usuário especifica a sua classificação entre Professor e Aluno.
 2. O sistema transfere o usuário para uma tela de cadastro através da informação.
-3. O Usuário informa os dados a partir do que é requerido no formulário.
-4. O sistema verifica se as informações são válidas.
-5. O usuário é cadastrado caso todas as informações sejam validadas.
+3. O Usuário informa os dados (Nome, Data de Nascimento, Matrícula Série e Curso [Regular ou Integrado]) a partir do que é requerido no formulário.
+4. O usuário é cadastrado caso um Professor aprove o cadastro.
 
 # CD02 - Autenticar
 **Atores:** Aluno e Professor
@@ -53,8 +55,7 @@
 
 **Fluxo principal:**
 1. O usuário acessa o perfil desejado para visualizar as atividades.
-2. O usuário seleciona quais atividades quer visualizar.
-3. O sistema exibe as atividades realizadas.
+2. O sistema exibe as atividades realizadas.
 
 
 # CD05 - Pesquisar Thread
@@ -80,15 +81,15 @@
 3. Outros usuários do site poderão enviar respostas a thread.
   - Podendo avaliar as melhores respostas.
 
-# CD07 - Gerenciar Thread
-**Atores: Professor**
+# CD07 - Manter Postagens
+**Atores: Aluno e Professor**
 
-**Pré-condições: Ser um usuário Professor**
+**Pré-condições: Estar cadastrado no site**
 
 **Fluxo principal:**
-1. Caso haja um linguajar ofensivo ou inapropriado o Professor poderá excluir o comentário ou a thread.
-  - Também poderá fechar a thread caso o usuário Aluno não o faça.
-
+1. O usuário pode responder a uma thread, não havendo limite para a quantidade de respostas.  
+2. Caso haja um linguajar ofensivo ou inapropriado o Professor poderá excluir o comentário ou a thread, pois ele tem um nível superior de acesso.
+3. O usuário pode editar as respostas que ele deu.   
 
 # CD08 - Gerenciar Usuário
 **Atores: Professor**
@@ -98,3 +99,21 @@
 **Fluxo principal:**
 1. O usuário Professor poderá ver os dados de todos os usuários, afim de checar as informações.
 2. Poderá banir a conta de algum usuário caso o mesmo ofender alguém.
+
+# CD09 - Avaliar
+**Atores: Aluno e Professor**
+
+**Pré-condições: Ser um usuário do site**
+
+**Fluxo principal:**
+1. O usuário poderá votar em qualquer postagem, positivamente ou negativamente.
+ - A postagem mais bem avaliada será destacada abaixo da thread.
+
+# CD10 - Aprovar Cadastro
+
+ **Atores: Professor**
+
+ **Pré-condições: Ser um usuário Professor**
+
+ **Fluxo principal:**
+ 1. O usuário Professor deve verificar se uma solicitação de cadastro é ,de fato, do aluno ou professor que solicitou.
