@@ -12,8 +12,26 @@
 - [CDU 08 - Gerenciar Usuário](#cdu-08---gerenciar-usuário)
 
 # CD01 - Solicitar Cadastro
+**Atores:** Aluno e professor
+
+**Pré-condições:** Ser aluno ou professor do Colégio Pedro II.
+
+**Fluxo principal:**
+1. O usuário especifica a sua classificação entre Professor e Aluno.
+2. O sistema transfere o usuário para uma tela de cadastro através da informação.
+3. O Usuário informa os dados a partir do que é requerido no formulário.
+4. O sistema verifica se as informações são válidas.
+5. O usuário é cadastrado caso todas as informações sejam validadas.
 
 # CD02 - Autenticar
+**Atores:** Aluno e Professor
+
+**Pré-condições:** Possuir cadastro
+
+**Fluxo principal:**
+1. O usuário informa seu username e sua senha.
+2. O sistema verifica as informações fornecidas e caso as mesmas sejam válidas, o usuário consegue o acesso.
+
 
 # CD03 - Alterando Dados
 
