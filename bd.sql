@@ -4,13 +4,15 @@ CREATE TABLE aluno(
 aluno_id int identity not null,
 serie int not null,
 curso int not null,
-PRIMARY KEY (aluno_id)
+PRIMARY KEY (aluno_id),
+FOREIGN KEY(aluno_id) REFERENCES usuario(usuario_id)
 );
 
 CREATE TABLE professor(
 professor_id int identity not null,
 disciplina int not null,
-PRIMARY KEY (professor_id)
+PRIMARY KEY (professor_id),
+FOREIGN KEY (professor_id) REFERENCES usuario(usuario_id)
 );
 
 CREATE TABLE usuario(
@@ -20,9 +22,7 @@ dataNasc date not null,
 matricula varchar(9) not null,
 professor_id int,
 aluno_id int,
-PRIMARY KEY(usuario_id),
-FOREIGN KEY(professor_id) REFERENCES professor(professor_id),
-FOREIGN KEY(aluno_id) REFERENCES aluno(aluno_id)
+PRIMARY KEY(usuario_id)
 );
 
 CREATE TABLE thread(
