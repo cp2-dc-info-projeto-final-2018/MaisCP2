@@ -1,0 +1,92 @@
+.header{
+  margin-left: 0px;
+  margin-right: 10px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: auto;
+  left: 0;
+  right: 0;
+}
+
+.logoImagem{
+  margin-left: 5px;
+  margin-right: 5px;
+  width: auto;
+  height: auto;
+}
+
+.esquerda{
+  float:left;
+  display: inline-block;
+
+}
+
+.direita{
+  float:right;
+  display: inline-block;
+}
+
+
+
+.TextoLink:hover{
+  color: #F9B240;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.botao{
+  background-color: #316AB2;
+  color: white;
+  border-color: black;
+  border-width: thin;
+  font-weight: 400;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.paginationArrow{
+  color: grey;
+  padding-right: 5px;
+  padding-left: 5px;
+
+}
+
+.a{
+  color: black;
+  text-decoration: none;
+
+}
+
+.a:hover{
+
+  color: #F9B240
+
+
+}
+
+
+
+.fundo{
+  background-color: white;
+  color:black;
+
+
+
+}
+
+
+body{
+  margin-top: 65px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  margin-bottom: 65px;
+  background-color: #f2f2f2;
+}
