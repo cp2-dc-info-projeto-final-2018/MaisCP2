@@ -22,7 +22,7 @@
 **Fluxo principal:**
 1. O usuário especifica a sua classificação entre Professor e Aluno.
 2. O sistema transfere o usuário para uma tela de cadastro através da informação.
-3. O Usuário informa os dados (Nome, Data de Nascimento, Matrícula Série e Curso [Regular ou Integrado]) a partir do que é requerido no formulário.
+3. O Usuário informa os dados (Nome, Nome de Usuário, Senha e Matrícula a partir do que é requerido no formulário.
 4. O usuário é cadastrado caso um Professor aprove o cadastro.
 
 # CD02 - Autenticar
