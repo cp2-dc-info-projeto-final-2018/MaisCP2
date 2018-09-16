@@ -6,19 +6,20 @@
 
 		$db = CriaConexãoBd();
 
-		$cmdSql = $db->prepare(
-			'INSERT INTO usuario (nome, usuario, senha, matricula)
-			 VALUES (:nome, :usuario, :senha, :matricula)'
+		$sql = $db->prepare(
+			'INSERT INTO usuario (nomeCompleto, nomeUsuario, senha, matricula, email)
+			 VALUES (:nomeCompleto, :nomeUsuario, :senha, :matricula, :email)'
 		);
 
 
-		$cmdSql->bindValue(':nome',  $novoUsuario['nome']);
-		$cmdSql->bindValue(':usuario',  $novoUsuario['usuario']);
-		$cmdSql->bindValue(':matricula',  $novoUsuario['matricula']);
-		$cmdSql->bindValue(':senha', $novoUsuario['senha']);
+		$sql->bindValue(':nomeCompleto',  $novoUsuario['nomeCompleto']);
+		$sql->bindValue(':nomeUsuario',  $novoUsuario['nomeUsuario']);
+		$sql->bindValue(':matricula',  $novoUsuario['matricula']);
+		$sql->bindValue(':senha', $novoUsuario['senha']);
+  	$sql->bindValue(':email', $novoUsuario['email']);
 
 
-		$cmdSql->execute();
+		$sql->execute();
 	}
 
   function BuscaMatricula(string $matricula)
@@ -26,17 +27,35 @@
 
     $db = CriaConexãoBd();
 
-    $cmdSql = $db->prepare(
-        "SELECT * FROM usuario WHERE matricula = :matricula;"
-
+    $sql = $db->prepare(
+      "SELECT * FROM usuario WHERE matricula = :matricula;"
     );
 
-    	$cmdSql->bindValue(':matricula', $matricula );
+    	$sql->bindValue(':matricula', $matricula );
 
 
-    	$cmdSql -> execute();
+    	$sql -> execute();
 
-      return $cmdSql -> rowCount();
+      return $sql -> rowCount();
+
+
+  }
+
+  function BuscaEmail(string $email)
+  {
+
+    $db = CriaConexãoBd();
+
+    $sql = $db->prepare(
+      "SELECT * FROM usuario WHERE email = :email;"
+    );
+
+      $sql->bindValue(':email', $email );
+
+
+      $sql -> execute();
+
+      return $sql -> rowCount();
 
 
   }
