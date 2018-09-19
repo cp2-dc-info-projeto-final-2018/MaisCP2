@@ -21,7 +21,7 @@
     <div id="login-descricao">
 
       <!--Criar uma conta-->
-      <form id="formulario" method="POST" action='Controle/Usuario/cadastraUsuario.php' novalidate>
+      <form id="formulario" method="POST" action='Controle/Usuario/cadastraAluno.php' novalidate>
 
       </br><input name="nomeCompleto" type="text"  placeholder="Nome completo" style="width:150px;font-size:16px;" width minlenght=3 maxlength=60 required/>
 
@@ -49,9 +49,9 @@
           <option value="2">Integrado</option>
         </select>
 
-        <label><input name="alertasEmail" type="checkbox"/>Receber alertas por e-mail.</label><br/>
+      <label><input name="alertasEmail" type="checkbox"/>Receber alertas por e-mail.</label><br/>
 
-      </br><input class ="btn bt primarybutton" style="margin-left:90px; background-color:#316AB2; " type="submit" value="Criar conta"/>
+    </br><input class ="botaoConta btn bt primarybutton" style="margin-left:90px; background-color:#316AB2; " type="submit" value="Criar conta"/>
       </form>
     </div>
 
