@@ -34,7 +34,6 @@ $matricula = $validar['matricula'];
 $alertasEmail = $validar['alertasEmail'];
 
 
-
 if ($nomeCompleto == false)
 {
   $erros[] = "Insira um nome.";
@@ -71,19 +70,13 @@ else if ($confirmaSenha != $senha)
 $erros[] = "As senhas devem ser iguais.";
 };
 
+$validar['senha'] = password_hash("md5", PASSWORD_DEFAULT);
+
 if ($email == false)
 {
 $erros[] = "Insira um e-mail válido.";
 };
 
-if ($matricula == false)
-{
-  $erros[] = "Insira uma matrícula.";
-}
-else if (strlen($matricula) > 9)
-{
-  $erros[] = "Insira uma matrícula válida";
-};
 
   if ($alertasEmail == null)
   {
@@ -98,11 +91,12 @@ else if (strlen($matricula) > 9)
       $erros[] =  "Esse email já está cadastrado";
     }
 
-  $count2 = BuscaMatricula($matricula);
+
+    $count2 = BuscaUsuario($nomeUsuario);
 
     if ($count2 > 0)
       {
-        $erros[] =  "Essa matrícula já está cadastrada";
+        $erros[] =  "Esse nome de usuário já existe";
       }
 
 
@@ -119,6 +113,10 @@ else if (strlen($matricula) > 9)
      {
        echo "<p>$e</p>";
      }
+   }
+
+   if($erros != null){
+     header('Location: ../../index.php');
    }
 
 
