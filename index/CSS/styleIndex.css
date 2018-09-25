@@ -1,17 +1,18 @@
   body
   {
-    background-image: url("background.png");
+    background-image: url("../Imagens/background.png");
 
   }
 
   #login-box
   {
     background-color:white;
-    width: 350px;
-    height: 470px;
+    width: 360px;
+    height: 590px;
     margin: 99px auto 0px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px black;
+    margin-top: 100px;
 
   }
 
@@ -30,15 +31,15 @@
     position:absolute;
     top:26%;
     left:47%;
-    margin-top:-73px;
-    margin-left:-35px;
+    margin-top:-58px;
+    margin-left:-43px;
     display: block;
 
   }
 
   #cadastre{
     margin-left: 115px;
-    margin-top: 20px;
+    margin-top: 5px;
      font-size: 23px;"
   }
 
@@ -49,24 +50,13 @@
 
 .botao{
   margin-left: 26%;
+  background-color: #316AB2;
 
 }
 
-.butaoAluno{
-margin-left:105px;
-width: 150px;
- margin-top:25px;
- background-color:#316AB2;
- color: white;
+.form{
+  margin-top: 20px;
+  margin-left:75px;
 
-}
-
-.butaoProfessor
-{
-margin-left:105px;
-width:150px;
- margin-top:15px;
-  background-color:#316AB2;
-  color: white;
 
 }

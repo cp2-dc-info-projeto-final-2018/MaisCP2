@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8"/>
   <title>MaisCPII - Aprendendo além da escola</title>
-  <link rel="icon" href="favi.ico" type="image/ico" sizes="64x64">
-  <link rel="icon" href="imagens/favi.ico" type="image/ico" sizes="64x64">
+  <link rel="icon" href="Imagens/favi.ico" type="image/ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" href="CSS/styleCadastrar.css">
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-   <link rel="stylesheet" type="text/css" href="styleCadastro.css">
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
 <body>
@@ -15,25 +15,31 @@
 
 
     <div id="login-logo">
-      <img src="maiscp2.jpg" id="logo" alt="+CP2">
+      <img src="Imagens/maiscp2.jpg" id="logo" alt="+CP2">
     </div>
 
-    <p id="cadastre"><b>Cadastre-se</p></b>
-    <p id="tipo"> Escolha seu tipo de usuário: </p>
+    <div id="login-descricao">
+
+      <p id=cadastre> Cadastre-se</p>
+      <form id="formulario" method="POST" action='Controle/Usuario/cadastraUsuario.php' novalidate>
+
+      </br><input name="nomeCompleto" type="text"  placeholder="Nome completo" style="width:150px;font-size:16px;" width minlenght=3 maxlength=60 required/>
+
+        <input name="nomeUsuario" type="text" placeholder="Username" style="width:150px; font-size:16px;" minlenght=3 maxlength=35 required/><br/>
+
+        <br/><input name="senha" type="password" placeholder="Senha" style="width:150px; font-size:16px"  minlenght=6 maxlength=12 required/>
+
+        <input name="confirmaSenha" type="password" placeholder="Confirmar senha" style="width:150px; font-size:16px" minlenght=6 maxlength=12 required/><br/>
+
+        <br/><input name="email" type="email" placeholder="E-mail" style="width:150px; font-size:16px" required/><br/>
 
 
+        <label><input name="alertasEmail" type="checkbox"/>Receber alertas por e-mail.</label><br/>
 
-
-      <!--Criar uma conta-->
-
-    <a href="mais_CP2_aluno.php" id="linkAluno"><button class ="butaoAluno btn bt primarybutton" type="button">Aluno</button></a>
-
-  </br><a href="mais_CP2_aluno.php" id="linkAluno"><button class ="butaoProfessor btn bt primarybutton" type="button">Professor</button></a>
-
-
+      </br><input class ="botao btn bt primarybutton" type="submit" value="Criar conta"/>
 
       </form>
-
+    </div>
 
 
   </div>
