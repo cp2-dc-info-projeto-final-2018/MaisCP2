@@ -1,16 +1,15 @@
 <?php
 
-session_start();
 
-if(empty($_SESSION['erroLogin']) == false)
-{
-$erros = $_SESSION['erroLogin'];
-}
-else {
-	$erros = null;
-}
-?>
-
+	session_start();
+	if(empty($_SESSION['erroLogin']) == false)
+	{
+		$erros = $_SESSION['erroLogin'];
+	}
+	else {
+		$erros = null;
+	}
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,20 +29,16 @@ else {
       <img src="Imagens/maiscp2.jpg" id="logo" alt="+CP2">
     </div>
 
-
-    <p id="cadastre">Efetuar login</p>
-    <?php if ($erros != null) { ?>
-
-       <div class="alert">
-         <p> Erro: <?= $erros ?> </p>
-
-       </div>
-     <?php } ?>
+		<?php if ($erros !=null) { ?>
+			<div class="alert alert-warning">
+				<p>Erro: <?= $erros ?></p>
+			</div>
+		<?php } ?>
 
     <div class="Container">
-        <form method="POST" class="form"action="Controle/entra.php">
+        <form method="POST" class="form" action="Controle/entra.php">
           <div class="form-group">
-            <label>Nome de Usuário: <input name="nomeUsuario" type="text" required placeholder="MaisCPII" class="form-control"/></label>
+            <label>Nome de Usuário: <input name="nomeUsuario" type="text" required placeholder="Login" class="form-control"/></label>
           </div>
           <div class="form-group" style="font-size:13px;">
             <label>Senha: <input name="senha" type="password" required minlength="6" maxlength="12" placeholder="******" class="form-control"/></label>

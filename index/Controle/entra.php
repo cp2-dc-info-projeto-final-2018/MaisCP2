@@ -1,5 +1,5 @@
 <?php
- require_once('../Tabelas/TabelaUsuario.php');
+ require_once('../Tabelas/ConexaoBd.php');
  $erros = null;
  $request = array_map('trim', $_REQUEST);
  $request = filter_var_array(
@@ -13,17 +13,29 @@
  {
 	 $erros = "Username não informado";
  }
-	 else if ($senha == false)
+ if ($senha == false)
  {
 	 $erros = "Senha não informada";
  }
  // PENDENTE: Concluir a validação
- else if (array_key_exists($nomeUsuario, $novoUsuarios) == false)
+ $db = CriaConexãoBd();
+ $sql = $db->prepare(
+   "SELECT senha FROM usuario WHERE nomeUsuario = :nomeUsuario;"
+ );
+
+
+  $sql->bindValue(':nomeUsuario', $nomeUsuario );
+
+  $sql->execute();
+
+  $resultado = $sql->fetch();
+
+ if (array_key_exists($resultado) == false)
  {
-	 $erros = "Nenhum usuário cadastrado com esse username";
+	 $erros = "Nenhum usuário cadastrado com esse nome de usuário";
  }
 
- else if (password_verify($senha, $novoUsuario['nomeUsuario']['senha']) == false)
+ else if (password_verify($senha, $resultado['senha']) == false)
  {
 	 $erros = "Senha inválida";
  }
