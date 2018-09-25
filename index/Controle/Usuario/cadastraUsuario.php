@@ -12,15 +12,13 @@
 
     'nomeUsuario' => FILTER_DEFAULT,
 
-    'email' => FILTER_VALIDATE_EMAIL,
-
     'senha' => FILTER_DEFAULT,
 
     'confirmaSenha' => FILTER_DEFAULT,
 
-    'matricula' => FILTER_DEFAULT,
+    'email' => FILTER_VALIDATE_EMAIL
 
-    'alertasEmail' => FILTER_VALIDATE_BOOLEAN,
+
     ]
   );
 
@@ -29,27 +27,27 @@ $nomeCompleto = $validar['nomeCompleto'];
 $nomeUsuario = $validar['nomeUsuario'];
 $senha = $validar['senha'];
 $confirmaSenha = $validar['confirmaSenha'];
-$email = $validar['email'];
-$matricula = $validar['matricula'];
-$alertasEmail = $validar['alertasEmail'];
+$email= $validar['email'];
+
+
 
 
 if ($nomeCompleto == false)
 {
-  $erros[] = "Insira um nome.";
+  $erros[] = "Insira seu nome.";
 }
-else if (strlen($nomeCompleto) < 3 || strlen($nomeCompleto) > 60 )
+else if (strlen($nomeCompleto) < 3 || strlen($nomeCompleto) > 60)
 {
   $erros[] = "Quantidade de caracteres no nome inválido.";
 };
 
 if ($nomeUsuario == false)
 {
-$erros[] = "Insira um username.";
+$erros[] = "Insira um nome de usuário.";
 }
 else if (strlen($nomeUsuario) < 3 || strlen($nomeUsuario) > 35)
 {
-$erros[] = "Quantidade de caracteres no username inválido.";
+$erros[] = "Quantidade de caracteres no nome de usuário inválido.";
 };
 
 if ($senha == false)
@@ -70,18 +68,11 @@ else if ($confirmaSenha != $senha)
 $erros[] = "As senhas devem ser iguais.";
 };
 
-$validar['senha'] = password_hash("md5", PASSWORD_DEFAULT);
-
 if ($email == false)
 {
-$erros[] = "Insira um e-mail válido.";
+$erros[] = "Insira um email válido.";
 };
 
-
-  if ($alertasEmail == null)
-  {
-    $alertasEmail = false;
-  }
 
 
   $count = BuscaEmail($email);
@@ -91,13 +82,13 @@ $erros[] = "Insira um e-mail válido.";
       $erros[] =  "Esse email já está cadastrado";
     }
 
-
     $count2 = BuscaUsuario($nomeUsuario);
 
     if ($count2 > 0)
       {
-        $erros[] =  "Esse nome de usuário já existe";
+        $erros[] =  "Esse nome de usuário já está cadastrado";
       }
+
 
 
 
@@ -113,10 +104,6 @@ $erros[] = "Insira um e-mail válido.";
      {
        echo "<p>$e</p>";
      }
-   }
-
-   if($erros != null){
-     header('Location: ../../index.php');
    }
 
 

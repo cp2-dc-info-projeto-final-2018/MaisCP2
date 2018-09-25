@@ -49,7 +49,7 @@ else {
             <label>Senha: <input name="senha" type="password" required minlength="6" maxlength="12" placeholder="******" class="form-control"/></label>
           </br>  <a href="cadastro.php" name="entrar" style="font-size:13px;">Cadastre-se</a>
           ou
-        </br> <a href="" style="font-size:13px;">Entre como observador</a>
+        </br> <a href="inicio.php" style="font-size:13px;">Entre como observador</a>
 
           </div>
 
