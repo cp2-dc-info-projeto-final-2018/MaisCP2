@@ -5,7 +5,7 @@
   <title>MaisCP2 - Aprendendo Além da Escola</title>
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="CSS/styleInicio.css">
+  <link rel="stylesheet" type="text/css" href="CSS/styleMaterias.css">
   <link rel="icon" href="Imagens/favi.ico" type="image/ico" sizes="64x64">
 
 
@@ -17,10 +17,10 @@
       <div class="esquerda">
         <a href="index.php"  title="maiscp2.com" class="navBar TextoLink"><img src="Imagens/logoLink.png" class="logoImagem">MaisCP2</a>
 
-        <a class= "navBar TextoLink" href="a">Início</a>
+        <a class= "navBar TextoLink" href="inicio.php">Início</a>
         <a class= "navBar TextoLink" href="materias.php">Matérias</a>
-        <a class= "navBar TextoLink" href="a">Responder</a>
-        <a class= "navBar TextoLink" href="a">Notificações</a>
+        <a class= "navBar TextoLink" href="a">Respostas</a>
+        <a class= "navBar TextoLink" href="a">Perfil</a>
         <form class="searchBar" action="/action_page.php">
           <input class="textBusca"  type="text" placeholder="Pesquisar" name="pesquisar">
           <button type="submit"><i class="search fa fa-search"></i></button>
@@ -32,7 +32,7 @@
 
 
       <div class="direita">
-        <a  class= "btn btn-primary botao" href="index.php/pergunta" title="MaisCP2.com">Sair</a>
+        <a  class= "btn btn-primary botao" href="index.php" title="Sair">Sair</a>
       </div>
     </div>
   </div>

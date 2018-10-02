@@ -16,10 +16,10 @@
       <div class="esquerda">
         <a href="index.php"  title="maiscp2.com" class="navBar TextoLink"><img src="Imagens/logoLink.png" class="logoImagem">MaisCP2</a>
 
-        <a class= "navBar TextoLink" href="a">Início</a>
+        <a class= "navBar TextoLink" href="inicio.php">Início</a>
         <a class= "navBar TextoLink" href="materias.php">Matérias</a>
-        <a class= "navBar TextoLink" href="a">Responder</a>
-        <a class= "navBar TextoLink" href="a">Notificações</a>
+        <a class= "navBar TextoLink" href="a">Respostas</a>
+        <a class= "navBar TextoLink" href="a">Perfil</a>
         <form class="searchBar" action="/action_page.php">
           <input class="textBusca"  type="text" placeholder="Pesquisar" name="pesquisar">
           <button type="submit"><i class="search fa fa-search"></i></button>
