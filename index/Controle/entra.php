@@ -30,20 +30,24 @@
 
   $resultado = $sql->fetch();
 
- if (array_key_exists($resultado) == false)
+ if (array_key_exists(':nomeUsuario', $resultado) == false)
  {
 	 $erros = "Nenhum usuário cadastrado com esse nome de usuário";
  }
 
- else if (password_verify($senha, $resultado['senha']) == false)
+ if (password_verify($senha, $resultado['senha']) == false)
  {
 	 $erros = "Senha inválida";
  }
- // PENDENTE: Em caso de sucesso, redirecionar o usuário para a página de pedidos
+ // PENDENTE: Em caso de sucesso, redirecionar o usuário para a página de inicio
  // PENDENTE: Em caso de erro, redirecionar usuário para a página de login para exibir as mensagens de erro
  if($erros != null){
 	 session_start();
 	 $_SESSION['erroLogin'] = $erros;
 	 header('Location: ../index.php');
+ }
+ else
+ {
+   header('Location: ../inicio.php');
  }
 ?>

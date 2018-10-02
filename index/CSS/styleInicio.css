@@ -11,6 +11,7 @@
   left: 0;
   right: 0;
     box-shadow: 0px 0px 5px grey;
+    overflow: hidden;
 }
 
 .logoImagem{
@@ -136,7 +137,6 @@ margin-left: 860px;
 
 .container{
   margin-top: 30px;
-
 }
 
 .forumMod{
@@ -169,13 +169,121 @@ padding-left: 5px;
 }
 
 .table{
-  width:100%;
-  height: auto;
-  border: 1px solid lightgray;
-  margin-left: 50px;
-  margin-top: 5px;
+  position: absolute;
+
 }
 
+.img1{
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 85%;
+  width: 90%;
+  border-radius: 10%;
+
+}
+
+.img1:hover{
+opacity: 0.3;
+cursor: pointer;
+}
+
+#bio{
+  position: absolute;
+     top: 23%;
+     left: 13%;
+     transform: translate(-50%, -50%);
+     color:black;
+}
+#des{
+  position: absolute;
+     top: 23%;
+     left: 38%;
+     transform: translate(-50%, -50%);
+     color:black;
+}
+#edfis{
+  position: absolute;
+     top: 23%;
+     left: 63%;
+     transform: translate(-50%, -50%);
+     color:black;
+}
+#filo{
+  position: absolute;
+     top: 23%;
+     left: 90%;
+     transform: translate(-50%, -50%);
+     color:black;
+}
+#fis{
+  position: absolute;
+     top: 54%;
+     left: 13%;
+     transform: translate(-50%, -50%);
+     color:black;
+}
+#geo{
+  position: absolute;
+     top: 54%;
+     left: 38%;
+     transform: translate(-50%, -50%);
+     color:black;
+}
+#his{
+  position: absolute;
+     top: 54%;
+     left: 63%;
+     transform: translate(-50%, -50%);
+     color:black;
+}
+#info{
+  position: absolute;
+     top: 54%;
+     left: 88%;
+     transform: translate(-50%, -50%);
+     color:black;
+}
+#le{
+  position: absolute;
+     top: 85%;
+     left: 13%;
+     transform: translate(-50%, -50%);
+     color:black;
+}
+#mat{
+  position: absolute;
+     top: 85%;
+     left: 38%;
+     transform: translate(-50%, -50%);
+     color:black;
+}
+#port{
+  position: absolute;
+     top: 85%;
+     left: 63%;
+     transform: translate(-50%, -50%);
+     color:black;
+}
+#qui{
+  position: absolute;
+     top: 85%;
+     left: 88%;
+     transform: translate(-50%, -50%);
+     color:black;
+}
+
+
+
+
+
+.centro{
+position: absolute;
+top: 60%;
+left: 13%;
+transform: translate(-50%, -50%);
+font-size: 18px;
+}
 
 body{
   margin-top: 65px;
@@ -189,6 +297,7 @@ body{
 h1{
   font-size: 25px;
   color: #F9B240;
+  margin-left: 1%;
 }
 
 

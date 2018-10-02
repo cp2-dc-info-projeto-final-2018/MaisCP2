@@ -23,9 +23,9 @@
       <p id=cadastre> Cadastre-se</p>
       <form id="formulario" method="POST" action='Controle/Usuario/cadastraUsuario.php' novalidate>
 
-      </br><input name="nomeCompleto" type="text"  placeholder="Nome completo" style="width:150px;font-size:16px;" width minlenght=3 maxlength=60 required/>
+      </br><input name="nomeCompleto" type="text"  placeholder="Nome" style="width:150px;font-size:16px;" width minlenght=3 maxlength=60 required/>
 
-        <input name="nomeUsuario" type="text" placeholder="Username" style="width:150px; font-size:16px;" minlenght=3 maxlength=35 required/><br/>
+        <input name="nomeUsuario" type="text" placeholder="Nome de usuário" style="width:150px; font-size:16px;" minlenght=3 maxlength=35 required/><br/>
 
         <br/><input name="senha" type="password" placeholder="Senha" style="width:150px; font-size:16px"  minlenght=6 maxlength=12 required/>
 

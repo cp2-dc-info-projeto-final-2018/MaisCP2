@@ -17,7 +17,7 @@
         <a href="index.php"  title="maiscp2.com" class="navBar TextoLink"><img src="Imagens/logoLink.png" class="logoImagem">MaisCP2</a>
 
         <a class= "navBar TextoLink" href="a">Início</a>
-          <a class= "navBar TextoLink" href="a">Matérias</a>
+        <a class= "navBar TextoLink" href="materias.php">Matérias</a>
         <a class= "navBar TextoLink" href="a">Responder</a>
         <a class= "navBar TextoLink" href="a">Notificações</a>
         <form class="searchBar" action="/action_page.php">

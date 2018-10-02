@@ -18,6 +18,7 @@
         <a href="index.php"  title="maiscp2.com" class="navBar TextoLink"><img src="Imagens/logoLink.png" class="logoImagem">MaisCP2</a>
 
         <a class= "navBar TextoLink" href="a">Início</a>
+        <a class= "navBar TextoLink" href="materias.php">Matérias</a>
         <a class= "navBar TextoLink" href="a">Responder</a>
         <a class= "navBar TextoLink" href="a">Notificações</a>
         <form class="searchBar" action="/action_page.php">
@@ -41,139 +42,39 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-lg-12  forumMod forumMargin">
+      <div class="col-lg-12  forumMod forumMargin table">
+        <h1>Selecione a matéria</h1>
 
-                  <h1>Selecione a matéria</h1>
+        <table>
+          <tr>
+            <th> <a href="a"> <p id="bio"> Biologia </p> <img class="img1" src="Imagens/bio.jpg"> </a> </th>
+            <th> <a href="a"> <p id="des"> Desenho </p> <img class="img1" src="Imagens/des.jpg"> </th>
+            <th> <a href="a"> <p id="edfis"> Educação Física </p> <img class="img1" src="Imagens/edfis.jpg"> </th>
+            <th> <a href="a"> <p id="filo"> Filosofia e Sociologia </p> <img class="img1" src="Imagens/filo.jpg"> </th>
+          </tr>
+          <tr>
+            <th> <a href="a"> <p id="fis"> Física </p> <img class="img1" src="Imagens/fis.jpg"> </a> </th>
+            <th> <a href="a"> <p id="geo"> Geografia </p> <img class="img1" src="Imagens/geo.jpg"> </a> </th>
+            <th> <a href="a"> <p id="his"> História </p> <img class="img1" src="Imagens/hist.jpg"> </a> </th>
+            <th> <a href="a"> <p id="info"> Informática </p> <img class="img1" src="Imagens/info.jpg"> </a> </th>
+          </tr>
+          <tr>
+            <th> <a href="a"> <p id="le"> Lingua Estrangeira </p> <img class="img1" src="Imagens/le.jpg"> </a> </th>
+            <th> <a href="a"> <p id="mat"> Matemática </p> <img class="img1" src="Imagens/mat.jpg"> </a> </th>
+            <th> <a href="a"> <p id="port"> Português </p> <img class="img1" src="Imagens/port.jpg"> </a> </th>
+            <th> <a href="a"> <p id="qui"> Química </p> <img class="img1" src="Imagens/qui.jpg"> </a> </th>
+          </tr>
 
-
-
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-.mySlides {display:none;}
-</style>
-<body>
-
-
-
-<div class="w3-content w3-display-container">
-  <div class="w3-display-container mySlides">
-  <a href=”http://localhost:8080/MaisCP2/pagina.php”>  <img src="Imagens/soci.jpg" style="width:100%"> </a>
-    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-      Sociologia
-    </div>
-  </div>
-
-
-  <div class="w3-display-container mySlides">
-      <a href=”http://localhost:8080/MaisCP2/pagina.php”><img src="Imagens/des.jpg" style="width:100%"></a>
-    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-      Desenho
-    </div>
-  </div>
-
-  <div class="w3-display-container mySlides">
-      <a href=”http://localhost:8080/MaisCP2/pagina.php”><img src="Imagens/geo.jpg" style="width:100%"></a>
-    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-      Geografia
-    </div>
-  </div>
-
-  <div class="w3-display-container mySlides">
-      <a href=”http://localhost:8080/MaisCP2/pagina.php”><img src="Imagens/ing.png" style="width:100%"></a>
-    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-      Inglês
-    </div>
-  </div>
+        </table>
 
 
-  <div class="w3-display-container mySlides">
-      <a href=”http://localhost:8080/MaisCP2/pagina.php”><img src="Imagens/quim.jpg" style="width:100%"></a>
-    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-      Química
-    </div>
-  </div>
 
-  <div class="w3-display-container mySlides">
-    <a href=”http://localhost:8080/MaisCP2/pagina.php”>  <img src="Imagens/Portu.jpg" style="width:100%"> </a>
-    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-      Português
-    </div>
-  </div>
-
-  <div class="w3-display-container mySlides">
-    <a href=”http://localhost:8080/MaisCP2/pagina.php”>  <img src="Imagens/mat.jpg" style="width:100%"> </a>
-    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-      Matemática
-    </div>
-  </div>
-
-<div class="w3-display-container mySlides">
-    <a href=”http://localhost:8080/MaisCP2/pagina.php”><img src="Imagens/filo.jpg" style="width:100%"> </a>
-  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-    Filosofia
-  </div>
-</div>
-
-<div class="w3-display-container mySlides">
-    <a href=”http://localhost:8080/MaisCP2/pagina.php”> <img src="Imagens/bio.jpg" style="width:100%"> </a>
-  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-  Biologia
-  </div>
-</div>
-
-<div class="w3-display-container mySlides">
-  <a href=”http://localhost:8080/MaisCP2/pagina.php”>  <img src="Imagens/edfis.jpg" style="width:100%"> </a>
-  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-    Educação Física
-  </div>
-</div>
-
-<div class="w3-display-container mySlides">
-   <a href=”http://localhost:8080/MaisCP2/pagina.php”>  <img src="Imagens/hist2.jpg" style="width:100%"> </a>
-  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-    História
-  </div>
-</div>
-
-<div class="w3-display-container mySlides">
-    <a href=”http://localhost:8080/MaisCP2/pagina.php”> <img src="Imagens/info.jpg" style="width:100%"> </a>
-  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-     Informática
-  </div>
-</div>
-
-<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
-<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
-
-</div>
-
-
-</div>
-  </div>
       </div>
+    </div>
+  </div>
 
-<script>
-var slideIndex = 1;
-showDivs(slideIndex);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  x[slideIndex-1].style.display = "block";
-}
-</script>
 
 </body>
 </html>
