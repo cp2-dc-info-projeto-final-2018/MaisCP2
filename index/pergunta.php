@@ -7,11 +7,14 @@
   {
     $nomeUsuario = $_SESSION['nomeUsuarioLogado'];
     $usuario = BuscaUsuario($nomeUsuario);
+
   }
   else
   {
     $nomeUsuario = "Visitante";
     $usuario = null;
+    header('Location: index.php');
+    echo "Identifique-se para iniciar uma thread";
   }
 
 
@@ -25,7 +28,7 @@
   <title>MaisCP2 - Aprendendo Além da Escola</title>
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="CSS/styleInicio.css">
+  <link rel="stylesheet" type="text/css" href="CSS/stylePergunta.css">
   <link rel="icon" href="Imagens/favi.ico" type="image/ico" sizes="64x64">
 
 </head>
@@ -64,31 +67,34 @@
     <div class="row">
         <div class="col-lg-12  forumMod forumMargin">
               <div class="esquerda">
-                <h1>Todas as matérias</h1>
+                <h1>Faça uma pergunta</h1>
               </div>
 
               <div class="direita">
-
-                <?php if ($usuario != false) { ?>
-                  <a  class= "btn btn-primary botao" href="pergunta.php" title="Perguntar">Adicionar pergunta</a>
-                <?php } ?>
-
+                  <a  class= "btn btn-primary botao" href="inicio.php" title="Perguntar">Cancelar</a>
               </div>
 
               <div class=" row forumMod forumPad">
-                <table class="table">
-                  <tr>
-                    <th>Discussão</th>
-                      <td>Como fazer uma thread?<td>
-                    <th> Autor</th>
-                      <td>Jagunço</td>
-                    <th>Serie</th>
-                      <td>terceirao</td>
-                    <th>Data</th>
-                      <td>25/09/2018</td>
-                </tr>
+
+                  <form id="formulario" method="POST" action='Controle/Threads/adicionar.php' novalidate>
+
+                      <input name="titulo" type="text"  placeholder="Título" style="width:150px;font-size:16px;" width minlenght=3 maxlength=60 required/>
 
 
+                    <input name="autor" type="text" placeholder="Autor" style="width:150px; font-size:16px;" minlenght=3 maxlength=35 required/><br/>
+
+                    <br/><input name="disciplina" type="password" placeholder="Disciplina" style="width:150px; font-size:16px"  minlenght=6 maxlength=12 required/>
+
+                    <input name="data" type="date" placeholder="Data" style="width:150px; font-size:16px" minlenght=6 maxlength=12 required/><br/>
+
+                    <br/><input name="serie" type="email" placeholder="Série" style="width:150px; font-size:16px" required/><br/>
+
+
+                    <input name="Descrição" type="textarea" placeholder="Descrição..."/><br/>
+
+                  </br><input class ="botao btn bt primarybutton" type="submit" value="Criar conta"/>
+
+                  </form>
 
             </div>
         </div>
@@ -98,7 +104,7 @@
 
 
     </div>
-  </div>
+
 
 </body>
 
