@@ -7,8 +7,10 @@
 								[ 'nomeUsuario' => FILTER_DEFAULT,
 									'senha' => FILTER_DEFAULT ]
 						);
+
  $nomeUsuario = $request['nomeUsuario'];
  $senha = $request['senha'];
+
  if ($nomeUsuario == false)
  {
 	 $erros = "Username não informado";
@@ -17,28 +19,31 @@
  {
 	 $erros = "Senha não informada";
  }
- // PENDENTE: Concluir a validação
- $db = CriaConexãoBd();
- $sql = $db->prepare(
-   "SELECT senha FROM usuario WHERE nomeUsuario = :nomeUsuario;"
- );
-
-
-  $sql->bindValue(':nomeUsuario', $nomeUsuario );
-
-  $sql->execute();
-
-  $resultado = $sql->fetch();
-
- if (array_key_exists(':nomeUsuario', $resultado) == false)
+ else
  {
-	 $erros = "Nenhum usuário cadastrado com esse nome de usuário";
+   // PENDENTE: Concluir a validação
+   $db = CriaConexãoBd();
+   $sql = $db->prepare(
+     "SELECT senha FROM usuario WHERE nomeUsuario = :nomeUsuario;"
+   );
+
+
+    $sql->bindValue(':nomeUsuario', $nomeUsuario );
+
+    $sql->execute();
+
+    $resultado = $sql->fetch();
+
+   if ($resultado == false)
+   {
+  	 $erros = "Nenhum usuário cadastrado com esse nome de usuário";
+   }
+   else if (password_verify($senha, $resultado['senha']) == false)
+   {
+  	 $erros = "Senha inválida";
+   }
  }
 
- if (password_verify($senha, $resultado['senha']) == false)
- {
-	 $erros = "Senha inválida";
- }
  // PENDENTE: Em caso de sucesso, redirecionar o usuário para a página de inicio
  // PENDENTE: Em caso de erro, redirecionar usuário para a página de login para exibir as mensagens de erro
  if($erros != null){
@@ -48,6 +53,8 @@
  }
  else
  {
+   session_start();
+   $_SESSION['nomeUsuarioLogado']= $nomeUsuario;
    header('Location: ../inicio.php');
  }
 ?>

@@ -1,10 +1,15 @@
 <?php
-
-
 	session_start();
-	if(empty($_SESSION['erroLogin']) == false)
+
+	if(array_key_exists('nomeUsuarioLogado', $_SESSION))
 	{
-		$erros = $_SESSION['erroLogin'];
+		header("Location:inicio.php");
+	}
+
+	if (array_key_exists('erroLogin',$_SESSION))
+	{
+	$erros = $_SESSION ['erroLogin'];
+	unset($_SESSION['erroLogin']);
 	}
 	else {
 		$erros = null;
@@ -44,7 +49,7 @@
             <label>Senha: <input name="senha" type="password" required minlength="6" maxlength="12" placeholder="******" class="form-control"/></label>
           </br>  <a href="cadastro.php" name="entrar" style="font-size:13px;">Cadastre-se</a>
           ou
-        </br> <a href="inicio.php" style="font-size:13px;">Entre como observador</a>
+        </br> <a href="inicio.php" style="font-size:13px;">Entre como visitante</a>
 
           </div>
 

@@ -54,7 +54,7 @@
 
       $sql -> execute();
 
-      return $sql -> rowCount();
+      return $sql -> fetch();
 
 
   }

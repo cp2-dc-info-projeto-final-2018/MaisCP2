@@ -1,4 +1,24 @@
+<?php
+  require_once('Tabelas/ConexaoBd.php');
+  require_once('Tabelas/TabelaUsuario.php');
+  session_start();
+
+  if(array_key_exists('nomeUsuarioLogado', $_SESSION))
+  {
+    $nomeUsuario = $_SESSION['nomeUsuarioLogado'];
+    $usuario = BuscaUsuario($nomeUsuario);
+  }
+  else
+  {
+    $nomeUsuario = "Visitante";
+    $usuario = null;
+  }
+
+
+
+ ?>
 <!DOCTYPE html>
+
 <html>
 <head>
   <meta charset="utf-8">
@@ -31,7 +51,8 @@
 
 
       <div class="direita">
-        <a  class= "btn btn-primary botao" href="index.php/pergunta" title="MaisCP2.com">Sair</a>
+        <span class="navbar-text ml-auto">Olá, <?= $nomeUsuario?></span>
+        <a  class= "btn btn-primary botao" href="Controle/sai.php" title="MaisCP2.com">Sair</a>
       </div>
     </div>
   </div>
@@ -47,7 +68,11 @@
               </div>
 
               <div class="direita">
-                <a  class= "btn btn-primary botao" href="index.php/pergunta" title="MaisCP2.com">Adicionar pergunta</a>
+
+                <?php if ($usuario != false) { ?>
+                  <a  class= "btn btn-primary botao" href="index.php/pergunta" title="MaisCP2.com">Adicionar pergunta</a>
+                <?php } ?>
+
               </div>
 
               <div class=" row forumMod forumPad">

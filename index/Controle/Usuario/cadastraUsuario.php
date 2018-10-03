@@ -84,9 +84,9 @@ $erros[] = "Insira um email válido.";
       $erros[] =  "Esse email já está cadastrado";
     }
 
-    $count2 = BuscaUsuario($nomeUsuario);
+    $usuário2 = BuscaUsuario($nomeUsuario);
 
-    if ($count2 > 0)
+    if (empty($usuário2) != false)
       {
         $erros[] =  "Esse nome de usuário já está cadastrado";
       }
