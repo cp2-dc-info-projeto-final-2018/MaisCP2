@@ -44,7 +44,7 @@
         <a class= "navBar TextoLink" href="a">Respostas</a>
         <a class= "navBar TextoLink" href="a">Perfil</a>
         <form class="searchBar" action="/action_page.php">
-          <input class="textBusca"  type="text" placeholder="Pesquisar" name="pesquisar">
+          <input class="textBusca"  type="text" action="Controle/Threads/pesquisar.php" placeholder="Pesquisar" name="pesquisar">
           <button type="submit"><i class="search fa fa-search"></i></button>
         </form>
 
@@ -64,8 +64,8 @@
 
 <body>
   <div class="container">
-    <div class="row">
-        <div class="col-lg-12  forumMod forumMargin">
+    <div class="tamanho row">
+        <div class=" col-lg-12  forumMod forumMargin">
               <div class="esquerda">
                 <h1>Faça uma pergunta</h1>
               </div>
@@ -77,24 +77,69 @@
               <div class=" row forumMod forumPad">
 
                   <form id="formulario" method="POST" action='Controle/Threads/adicionar.php' novalidate>
-
-                      <input name="titulo" type="text"  placeholder="Título" style="width:150px;font-size:16px;" width minlenght=3 maxlength=60 required/>
-
-
-                    <input name="autor" type="text" placeholder="Autor" style="width:150px; font-size:16px;" minlenght=3 maxlength=35 required/><br/>
-
-                    <br/><input name="disciplina" type="password" placeholder="Disciplina" style="width:150px; font-size:16px"  minlenght=6 maxlength=12 required/>
-
-                    <input name="data" type="date" placeholder="Data" style="width:150px; font-size:16px" minlenght=6 maxlength=12 required/><br/>
-
-                    <br/><input name="serie" type="email" placeholder="Série" style="width:150px; font-size:16px" required/><br/>
+                    <table>
+                      <tr>
+                        <th><label>Autor:</label>
+                        <input name="autor" id= "autor" type="text" value="<?= $nomeUsuario?>" disabled/>
 
 
-                    <input name="Descrição" type="textarea" placeholder="Descrição..."/><br/>
+                        <label>Disciplina</label>
+                        <select id= "disciplina" name="disciplina">
+                          <option value="1">Português</option>
+                          <option value="2">Geografia</option>
+                          <option value="3">História</option>
+                          <option value="4">Filosofia e Sociologia</option>
+                          <option value="5">Linguas Estrangeiras</option>
+                          <option value="6">Química</option>
+                          <option value="7">Biologia</option>
+                          <option value="8">Física</option>
+                          <option value="9">Educação Física</option>
+                          <option value="10">Desenho</option>
+                          <option value="11">Informática</option>
+                        </select>
+                      </th>
 
-                  </br><input class ="botao btn bt primarybutton" type="submit" value="Criar conta"/>
+                      <th>
+                        <label>Série</label>
+                          <select id= "serie" name="serie">
+                            <option value="1">1º ano</option>
+                            <option value="2">2º ano</option>
+                            <option value="3">3º ano</option>
+                          </select>
+                    </th>
 
+                    </tr>
+
+                    <tr>
+                      <th> <label>Título:</label>
+                        <input id="titulo" name="titulo" type="text" minlenght=10  required/>
+                      </th>
+                    </tr>
+
+                    <tr>
+                      <th>
+                        <label>Pergunta:</label>
+                      </th>
+                    </tr>
+
+                    <tr>
+                      <th>
+                        <textarea id= "descricao" name="descricao" required>
+
+                        </textarea>
+                      </th>
+                    </tr>
+
+                    <tr>
+                      <th>
+                        <input class ="botao btn bt primarybutton" type="submit" value="Perguntar"/>
+                      </th>
+                    </tr>
+
+                    </table>
                   </form>
+
+
 
             </div>
         </div>
