@@ -14,8 +14,9 @@
 
     'serie' => FILTER_VALIDATE_INT,
 
-    'descricao' => FILTER_DEFAULT
+    'descricao' => FILTER_DEFAULT,
 
+    'usuario_id' => FILTER_VALIDATE_INT
 
     ]
   );
@@ -26,6 +27,7 @@ $titulo = $validar['titulo'];
 $disciplina = $validar['disciplina'];
 $serie = $validar['serie'];
 $descricao = $validar['descricao'];
+$usuario_id = $validar['usuario_id'];
 
 
 

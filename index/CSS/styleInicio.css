@@ -171,9 +171,12 @@ padding-left: 5px;
 .table{
   width:100%;
   height: auto;
-  border: 1px solid lightgray;
+  border: 1px;
   margin-left: 50px;
   margin-top: 5px;
+  border-style:  solid;
+  border-color: #316AB2;
+  border-width: medium;
 }
 
 .img1{
@@ -201,6 +204,9 @@ transform: translate(-50%, -50%);
 font-size: 18px;
 }
 
+
+
+
 body{
   margin-top: 65px;
   margin-left: 10px;
@@ -209,7 +215,7 @@ body{
   margin-bottom: 65px;
   background-color: #f2f2f2;
 
-  
+
 
 }
 

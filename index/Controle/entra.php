@@ -1,19 +1,22 @@
 <?php
  require_once('../Tabelas/ConexaoBd.php');
+ $usuario_id = null;
  $erros = null;
+
  $request = array_map('trim', $_REQUEST);
  $request = filter_var_array(
 								$request,
 								[ 'nomeUsuario' => FILTER_DEFAULT,
-									'senha' => FILTER_DEFAULT ]
+									'senha' => FILTER_DEFAULT                 ]
 						);
 
  $nomeUsuario = $request['nomeUsuario'];
  $senha = $request['senha'];
 
+
  if ($nomeUsuario == false)
  {
-	 $erros = "Username não informado";
+	 $erros = "Nome de usuário não informado";
  }
  if ($senha == false)
  {
@@ -24,7 +27,7 @@
    // PENDENTE: Concluir a validação
    $db = CriaConexãoBd();
    $sql = $db->prepare(
-     "SELECT senha FROM usuario WHERE nomeUsuario = :nomeUsuario;"
+     "SELECT senha, usuario_id FROM usuario WHERE nomeUsuario = :nomeUsuario;"
    );
 
 
@@ -42,6 +45,9 @@
    {
   	 $erros = "Senha inválida";
    }
+
+   $usuario_id = $resultado['usuario_id'];
+
  }
 
  // PENDENTE: Em caso de sucesso, redirecionar o usuário para a página de inicio
@@ -55,6 +61,7 @@
  {
    session_start();
    $_SESSION['nomeUsuarioLogado']= $nomeUsuario;
+   $_SESSION['idUsuarioLogado']= $usuario_id;
    header('Location: ../inicio.php');
  }
 ?>

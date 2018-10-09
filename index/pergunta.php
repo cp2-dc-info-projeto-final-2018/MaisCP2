@@ -17,6 +17,11 @@
     echo "Identifique-se para iniciar uma thread";
   }
 
+  if(array_key_exists('idUsuarioLogado', $_SESSION))
+  {
+    $usuario_id = $_SESSION['idUsuarioLogado'];
+  }
+
 
 
  ?>
@@ -81,6 +86,8 @@
                       <tr>
                         <th><label>Autor:</label>
                         <input name="autor" id= "autor" type="text" value="<?= $nomeUsuario?>" disabled/>
+                        <input name="usuario_id" type="hidden" value="<?= $usuario_id?>"/>
+
 
 
                         <label>Disciplina</label>

@@ -14,8 +14,12 @@
     $usuario = null;
   }
 
+  $db = CriaConexãoBd();
+  $sql = $db->prepare(
+    "SELECT titulo, descricao, serie, disciplina FROM thread;"
+  );
 
-
+  $sql->execute();
  ?>
 <!DOCTYPE html>
 
@@ -52,7 +56,11 @@
 
       <div class="direita">
         <span class="navbar-text ml-auto">Olá, <?= $nomeUsuario?></span>
-        <a  class= "btn btn-primary botao" href="Controle/sai.php" title="MaisCP2.com">Sair</a>
+        <?php if ($nomeUsuario = "Visitante") { ?>
+          <a  class= "btn btn-primary botao" href="cadastro.php" title="Cadastrar-se">Cadastre-se</a>
+        <?php } ?>
+        <a  class= "btn btn-primary botao" href="Controle/sai.php" title="Saia">Sair</a>
+
       </div>
     </div>
   </div>
@@ -76,20 +84,34 @@
               </div>
 
               <div class=" row forumMod forumPad">
-                <table class="table">
+
+
+                <table id="table_threads" class="table">
                   <tr>
-                    <th>Discussão</th>
-                      <td>Como fazer uma thread?<td>
-                    <th> Autor</th>
-                      <td>Jagunço</td>
-                    <th>Serie</th>
-                      <td>terceirao</td>
-                    <th>Data</th>
+                    <div class="primLinha">
+                      <th>Autor</th>
+                        <td>Como fazer uma thread?<td>
+                      <th> Disciplina</th>
+                        <td>Jagunço</td>
+                      <th>Serie</th>
+                        <td>terceirao</td>
+                    </div>
+                  </tr>
+                  <tr>
+                    <th>Título</th>
                       <td>25/09/2018</td>
-                </tr>
+                  </tr>
+                  <tr>
+                  <th>Descrição</th>
+                      <td>25/09/2018</td>
+                  </tr>
 
-
-
+                  <?php
+                  while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
+                    echo "<tr><td>".$row['titulo']."</td><td>".$row['descricao']."</td><td>".$row['serie']."</td><td>".$row['disciplina']."</td></tr>";
+                  }
+                  ?>
+                </table>
             </div>
         </div>
 
