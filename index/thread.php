@@ -14,9 +14,11 @@
     $usuario = null;
   }
 
+  $titulo =
+
   $db = CriaConexãoBd();
   $sql = $db->prepare(
-    "SELECT titulo, thread_id, usuario.nomeUsuario AS autor
+    "SELECT titulo, usuario.nomeUsuario AS autor
      FROM thread JOIN usuario ON thread.usuario_id = usuario.usuario_id;"
   );
 
@@ -73,7 +75,7 @@
     <div class="row">
         <div class="col-lg-12  forumMod forumMargin">
               <div class="esquerda">
-                <h1>Todas as matérias</h1>
+                <h1><?= ?></h1>
               </div>
 
               <div class="direita">
@@ -96,10 +98,7 @@
 
                   <?php
                   while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
-                    $autor = $row['autor'];
-                    $titulo = $row['titulo'];
-                    $id = $row['thread_id'];
-                    echo "<tr><td><a href='perfil.php'>$autor</a></td><td><a href='thread.php?id=$id'>$titulo</a></td></tr>";
+                    echo "<tr><td>".$row['autor']."</td><td>".$row['titulo']."</td></tr>";
                   }
                   ?>
                 </table>

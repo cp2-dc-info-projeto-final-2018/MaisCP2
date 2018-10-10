@@ -1,6 +1,9 @@
 <?php
   require_once('../../Tabelas/TabelaThread.php');
 
+  session_start();
+  $usuario_id = $_SESSION['idUsuarioLogado'];
+
   $erros = [];
 
   $validar = array_map('trim', $_REQUEST);
@@ -8,6 +11,7 @@
   $validar = filter_var_array(
     $validar,
     [
+
     'titulo' => FILTER_DEFAULT,
 
     'disciplina' => FILTER_VALIDATE_INT,
@@ -16,18 +20,17 @@
 
     'descricao' => FILTER_DEFAULT,
 
-    'usuario_id' => FILTER_VALIDATE_INT
+    'usuario_id' => FILTER_DEFAULT
 
     ]
   );
-
 
 $titulo = $validar['titulo'];
 
 $disciplina = $validar['disciplina'];
 $serie = $validar['serie'];
 $descricao = $validar['descricao'];
-$usuario_id = $validar['usuario_id'];
+$validar['usuario_id'] = $usuario_id;
 
 
 

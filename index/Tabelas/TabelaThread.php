@@ -11,7 +11,6 @@
 			 VALUES (:titulo, :disciplina, :serie, :descricao, :usuario_id)'
 		);
 
-
 		$sql->bindValue(':titulo',  $novaThread['titulo']);
 		$sql->bindValue(':disciplina',  $novaThread['disciplina']);
 		$sql->bindValue(':serie', $novaThread['serie']);

@@ -86,7 +86,7 @@
                       <tr>
                         <th><label>Autor:</label>
                         <input name="autor" id= "autor" type="text" value="<?= $nomeUsuario?>" disabled/>
-                        <input name="usuario_id" type="hidden" value="<?= $usuario_id?>"/>
+                        
 
 
 
