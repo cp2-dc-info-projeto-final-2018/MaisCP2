@@ -1,6 +1,7 @@
 <?php
   require_once('Tabelas/ConexaoBd.php');
   require_once('Tabelas/TabelaUsuario.php');
+  require_once('Tabelas/TabelaThread.php');
   session_start();
 
   if(array_key_exists('nomeUsuarioLogado', $_SESSION))
@@ -21,6 +22,8 @@
   );
 
   $sql->execute();
+  $listaThreads = ListaThreads();
+
  ?>
 <!DOCTYPE html>
 
@@ -92,16 +95,12 @@
                       <th>Autor</th>
                       <th> Título</th>
                   </tr>
-
-
-                  <?php
-                  while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
-                    $autor = $row['autor'];
-                    $titulo = $row['titulo'];
-                    $id = $row['thread_id'];
-                    echo "<tr><td><a href='perfil.php'>$autor</a></td><td><a href='thread.php?id=$id'>$titulo</a></td></tr>";
-                  }
-                  ?>
+                  <?php foreach ($listaThreads as $thread) { ?>
+                    <tr>
+                      <td><a href="thread.php?id=<?= $thread['usuario_id']?>"><?= $thread['nomeUsuario']?></a></td>
+                      <td><a href="thread.php?id=<?= $thread['thread_id']?>"><?= $thread['titulo']?></a></td>
+                    </tr>
+                  <?php } ?>
                 </table>
             </div>
         </div>

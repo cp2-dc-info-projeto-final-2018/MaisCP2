@@ -205,8 +205,27 @@ transform: translate(-50%, -50%);
 font-size: 18px;
 }
 
+#autor{
+  margin-top: -25px;
+  margin-left: 10px;
+  color: #316AB2;
+}
 
+#linkAutor{
+  color: #316AB2;
+}
 
+.disciplina{
+  margin-top: -40px;
+  margin-left: 610px;
+  color: #316AB2;
+}
+
+#descricao {
+    border-style:  solid;
+    border-color: lightgrey;
+    border-width: thin;
+}
 
 body{
   margin-top: 65px;
@@ -221,8 +240,8 @@ body{
 }
 
 h1{
-  font-size: 25px;
   color: #F9B240;
+  font-family: "Georgia", Georgia, serif;
 
 }
 
@@ -231,3 +250,7 @@ h2{}
 
 
 h3{}
+
+body{
+  font-family: "Georgia", Georgia, serif;
+}

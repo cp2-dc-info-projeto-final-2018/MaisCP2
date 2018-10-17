@@ -86,7 +86,7 @@
                       <tr>
                         <th><label>Autor:</label>
                         <input name="autor" id= "autor" type="text" value="<?= $nomeUsuario?>" disabled/>
-                        
+
 
 
 
@@ -105,15 +105,6 @@
                           <option value="11">Informática</option>
                         </select>
                       </th>
-
-                      <th>
-                        <label>Série</label>
-                          <select id= "serie" name="serie">
-                            <option value="1">1º ano</option>
-                            <option value="2">2º ano</option>
-                            <option value="3">3º ano</option>
-                          </select>
-                    </th>
 
                     </tr>
 

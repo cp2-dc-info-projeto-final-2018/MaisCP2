@@ -16,8 +16,6 @@
 
     'disciplina' => FILTER_VALIDATE_INT,
 
-    'serie' => FILTER_VALIDATE_INT,
-
     'descricao' => FILTER_DEFAULT,
 
     'usuario_id' => FILTER_DEFAULT
@@ -28,7 +26,6 @@
 $titulo = $validar['titulo'];
 
 $disciplina = $validar['disciplina'];
-$serie = $validar['serie'];
 $descricao = $validar['descricao'];
 $validar['usuario_id'] = $usuario_id;
 
@@ -49,19 +46,11 @@ if ($disciplina == false)
 {
 $erros[] ="Insira uma disciplina.";
 }
-else if ($disciplina != 1 && $disciplina != 2 && $disciplina != 3)
+else if ($disciplina < 1 && $disciplina > 11)
 {
   $erros[] =  "Opção não encontrada.";
 };
 
-if ($serie == false)
-{
-$erros[] = "Insira a série da pergunta.";
-}
-else if ($serie != 1 && $serie != 2)
-{
-  $erros[] =  "Opção não encontrada.";
-};
 
   if (empty($erros))
   {

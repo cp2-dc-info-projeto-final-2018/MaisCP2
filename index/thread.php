@@ -1,6 +1,7 @@
 <?php
   require_once('Tabelas/ConexaoBd.php');
   require_once('Tabelas/TabelaUsuario.php');
+  require_once('Tabelas/TabelaThread.php');
   session_start();
 
   if(array_key_exists('nomeUsuarioLogado', $_SESSION))
@@ -14,15 +15,19 @@
     $usuario = null;
   }
 
-  $titulo =
-
   $db = CriaConexãoBd();
   $sql = $db->prepare(
-    "SELECT titulo, usuario.nomeUsuario AS autor
+    "SELECT titulo, thread_id, usuario.nomeUsuario AS autor
      FROM thread JOIN usuario ON thread.usuario_id = usuario.usuario_id;"
   );
 
   $sql->execute();
+
+  $listaThreads = ListaThreads();
+
+  $idThread = $_REQUEST['id'];
+  $thread= BuscaThread($idThread);
+
  ?>
 <!DOCTYPE html>
 
@@ -74,39 +79,28 @@
   <div class="container">
     <div class="row">
         <div class="col-lg-12  forumMod forumMargin">
-              <div class="esquerda">
-                <h1><?= ?></h1>
-              </div>
-
-              <div class="direita">
-
-                <?php if ($usuario != false) { ?>
-                  <a  class= "btn btn-primary botao" href="pergunta.php" title="Perguntar">Adicionar pergunta</a>
-                <?php } ?>
-
-              </div>
-
               <div class=" row forumMod forumPad">
+                  <div class="esquerda column">
+            			  <h1><?= $thread['titulo'] ?></h1>
+            			</div>
+            		</div>
 
+                <div class=" row forumMod forumPad">
+                  <div class=" column">
+                    <h3 id="autor">Autor: <a id="linkAutor"href="perfil.php?id=<?= $thread['usuario_id']?>"><?= $thread['nomeUsuario']?></a></h3>
+                    <h3 class="direita disciplina"> Disciplina: <?= $thread['disciplina']?> </h3>
+                  </div>
+              	</div>
 
-                <table id="table_threads" class="table">
-                  <tr>
-                      <th>Autor</th>
-                      <th> Título</th>
-                  </tr>
+                <div class=" row forumMod forumPad">
+                    <div class="column">
+                         <p id="descricao"><?= $thread['descricao'] ?></p>
+                    </div>
+                </div>
 
-
-                  <?php
-                  while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
-                    echo "<tr><td>".$row['autor']."</td><td>".$row['titulo']."</td></tr>";
-                  }
-                  ?>
-                </table>
-            </div>
         </div>
-
-
     </div>
+  </div>
 
 
     </div>
