@@ -44,7 +44,7 @@
         <a class= "navBar TextoLink" href="inicio.php">Início</a>
         <a class= "navBar TextoLink" href="materias.php">Matérias</a>
         <a class= "navBar TextoLink" href="a">Respostas</a>
-        <a class= "navBar TextoLink" href="a">Perfil</a>
+        <a class= "navBar TextoLink" href="perfil.php">Perfil</a>
         <form class="searchBar" action="/action_page.php">
           <input class="textBusca" method="POST" type="text" action="Controle/Threads/pesquisar.php" placeholder="Pesquisar" name="pesquisar">
           <button type="submit"><i class="search fa fa-search"></i></button>
