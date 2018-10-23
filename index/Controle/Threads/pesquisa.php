@@ -9,6 +9,9 @@ $sql = $db->prepare(
   "SELECT * FROM thread WHERE titutlo LIKE '%$pesquisa'"
 );
 
+$resultado = $sql->execute();
+
+?>
 
 
 

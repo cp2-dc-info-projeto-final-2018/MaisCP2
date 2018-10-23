@@ -17,12 +17,18 @@
 
   $db = CriaConexãoBd();
   $sql = $db->prepare(
-    "SELECT titulo, thread_id, usuario.nomeUsuario AS autor
-     FROM thread JOIN usuario ON thread.usuario_id = usuario.usuario_id;"
+    "SELECT titulo, thread_id, disciplina.nome, usuario.nomeUsuario AS autor
+     FROM thread
+     INNER JOIN usuario ON thread.usuario_id = usuario.usuario_id
+     INNER JOIN disciplina ON thread.disciplina = disciplina.disciplina_id;
+
+     "
+
   );
 
   $sql->execute();
   $listaThreads = ListaThreads();
+
 
  ?>
 <!DOCTYPE html>
@@ -49,7 +55,7 @@
         <a class= "navBar TextoLink" href="a">Respostas</a>
         <a class= "navBar TextoLink" href="a">Perfil</a>
         <form class="searchBar" action="/action_page.php">
-          <input class="textBusca" method="POST" type="text" action="Controle/Threads/pesquisar.php" placeholder="Pesquisar" name="pesquisar">
+          <input class="textBusca" method="POST" type="text" action="Controle/Threads/pesquisar.php?go" placeholder="Pesquisar" name="pesquisar">
           <button type="submit"><i class="search fa fa-search"></i></button>
         </form>
 
@@ -60,7 +66,7 @@
 
       <div class="direita">
         <span class="navbar-text ml-auto">Olá, <?= $nomeUsuario?></span>
-        <?php if ($nomeUsuario = "Visitante") { ?>
+        <?php if ($usuario == false) { ?>
           <a  class= "btn btn-primary botao" href="cadastro.php" title="Cadastrar-se">Cadastre-se</a>
         <?php } ?>
         <a  class= "btn btn-primary botao" href="Controle/sai.php" title="Saia">Sair</a>
@@ -93,11 +99,12 @@
                 <table id="table_threads" class="table">
                   <tr>
                       <th>Autor</th>
+                      <th>Disciplina</th>
                       <th> Título</th>
                   </tr>
                   <?php foreach ($listaThreads as $thread) { ?>
                     <tr>
-                      <td><a href="thread.php?id=<?= $thread['usuario_id']?>"><?= $thread['nomeUsuario']?></a></td>
+                      <td><a href="perfil.php?id=<?= $thread['usuario_id']?>"><?= $thread['nomeUsuario']?></a></td>
                       <td><a href="thread.php?id=<?= $thread['thread_id']?>"><?= $thread['titulo']?></a></td>
                     </tr>
                   <?php } ?>

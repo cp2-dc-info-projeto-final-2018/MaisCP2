@@ -32,6 +32,26 @@
   	return $resultado->fetchAll();
   }
 
+  function ListaThreadsPorDisciplina($disciplina) {
+    $where = null;
+
+    if ($disciplina != null ) {
+      $where = "WHERE disciplina = $disciplina";
+    } else if ($busca != null) {
+      $where = "WHERE titulo LIKE '%$busca%' OR descricao LIKE '%$busca%'";
+    }
+
+    $bd = CriaConexãoBd();
+
+  	$resultado = $bd->query
+    ("SELECT thread.*, usuario.nomeUsuario AS nomeUsuario
+      FROM thread
+      INNER JOIN usuario ON usuario.usuario_id = thread.usuario_id
+      $where");
+
+  	return $resultado->fetchAll();
+  }
+
 
   function BuscaThread(int $thread_id) : array
   {

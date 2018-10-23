@@ -1,7 +1,7 @@
 <?php
-  require_once('Tabelas/ConexaoBd.php');
-  require_once('Tabelas/TabelaUsuario.php');
-  require_once('Tabelas/TabelaThread.php');
+  require_once('../Tabelas/ConexaoBd.php');
+  require_once('../Tabelas/TabelaUsuario.php');
+  require_once('../Tabelas/TabelaThread.php');
   session_start();
 
   if(array_key_exists('nomeUsuarioLogado', $_SESSION))
@@ -18,15 +18,13 @@
   $db = CriaConexãoBd();
   $sql = $db->prepare(
     "SELECT titulo, thread_id, usuario.nomeUsuario AS autor
-     FROM thread JOIN usuario ON thread.usuario_id = usuario.usuario_id;"
+     FROM thread JOIN usuario ON thread.usuario_id = usuario.usuario_id;
+     WHERE disciplina = 7;
+     "
   );
 
   $sql->execute();
-
   $listaThreads = ListaThreads();
-
-  $idThread = $_REQUEST['id'];
-  $thread= BuscaThread($idThread);
 
  ?>
 <!DOCTYPE html>
@@ -37,8 +35,8 @@
   <title>MaisCP2 - Aprendendo Além da Escola</title>
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="CSS/styleInicio.css">
-  <link rel="icon" href="Imagens/favi.ico" type="image/ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" href="../CSS/styleInicio.css">
+  <link rel="icon" href="../Imagens/favi.ico" type="image/ico" sizes="64x64">
 
 </head>
 
@@ -46,14 +44,14 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="esquerda">
-        <a href="index.php"  title="maiscp2.com" class="navBar TextoLink"><img src="Imagens/logoLink.png" class="logoImagem">MaisCP2</a>
+        <a href="index.php"  title="maiscp2.com" class="navBar TextoLink"><img src="../Imagens/logoLink.png" class="logoImagem">MaisCP2</a>
 
-        <a class= "navBar TextoLink" href="inicio.php">Início</a>
-        <a class= "navBar TextoLink" href="materias.php">Matérias</a>
+        <a class= "navBar TextoLink" href="../inicio.php">Início</a>
+        <a class= "navBar TextoLink" href="../materias.php">Matérias</a>
         <a class= "navBar TextoLink" href="a">Respostas</a>
         <a class= "navBar TextoLink" href="a">Perfil</a>
         <form class="searchBar" action="/action_page.php">
-          <input class="textBusca" method="POST" type="text" action="Controle/Threads/pesquisar.php" placeholder="Pesquisar" name="pesquisar">
+          <input class="textBusca" method="POST" type="text" action="Controle/Threads/pesquisar.php?go" placeholder="Pesquisar" name="pesquisar">
           <button type="submit"><i class="search fa fa-search"></i></button>
         </form>
 
@@ -64,7 +62,7 @@
 
       <div class="direita">
         <span class="navbar-text ml-auto">Olá, <?= $nomeUsuario?></span>
-        <?php if ($nomeUsuario = "Visitante") { ?>
+        <?php if ($usuario == false) { ?>
           <a  class= "btn btn-primary botao" href="cadastro.php" title="Cadastrar-se">Cadastre-se</a>
         <?php } ?>
         <a  class= "btn btn-primary botao" href="Controle/sai.php" title="Saia">Sair</a>
@@ -79,29 +77,40 @@
   <div class="container">
     <div class="row">
         <div class="col-lg-12  forumMod forumMargin">
+              <div class="esquerda">
+                <h1>Todas as matérias</h1>
+              </div>
+
+              <div class="direita">
+
+                <?php if ($usuario != false) { ?>
+                  <a  class= "btn btn-primary botao" href="pergunta.php" title="Perguntar">Adicionar pergunta</a>
+                <?php } ?>
+
+              </div>
+
               <div class=" row forumMod forumPad">
-                  <div class="esquerda column">
-            			  <h1><?= $thread['titulo'] ?></h1>
-            			</div>
-            		</div>
 
-                <div class=" row forumMod forumPad">
-                  <div class=" column">
-                    <h3 id="autor">Autor: <a id="linkAutor"href="perfil.php?id=<?= $thread['usuario_id']?>"><?= $thread['nomeUsuario']?></a></h3>
-                    <h3 class="direita disciplina"> Disciplina: <?= $thread['disciplina']?> </h3>
-                  </div>
-              	</div>
 
-                <div class=" row forumMod forumPad">
-                    <div class="column">
-                         <!-- <p id="descricao"><?= $thread['descricao'] ?></p> -->
-                         <pre id="descricao"><?= $thread['descricao'] ?></pre>
-                    </div>
-                </div>
-
+                <table id="table_threads" class="table">
+                  <tr>
+                      <th>Autor</th>
+                      <th>Disciplina</th>
+                      <th> Título</th>
+                  </tr>
+                  <?php foreach ($listaThreads as $thread) { ?>
+                    <tr>
+                      <td><a href="thread.php?id=<?= $thread['usuario_id']?>"><?= $thread['nomeUsuario']?></a></td>
+                      <td><?= $thread['disciplina']?></a></td>
+                      <td><a href="thread.php?id=<?= $thread['thread_id']?>"><?= $thread['titulo']?></a></td>
+                    </tr>
+                  <?php } ?>
+                </table>
+            </div>
         </div>
+
+
     </div>
-  </div>
 
 
     </div>

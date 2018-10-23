@@ -47,22 +47,22 @@
 
         <table>
           <tr>
-            <th> <a href="a"> <p id="bio"> Biologia </p> <img class="img1" src="Imagens/bio.jpg"> </a> </th>
-            <th> <a href="a"> <p id="des"> Desenho </p> <img class="img1" src="Imagens/des.jpg"> </th>
-            <th> <a href="a"> <p id="edfis"> Educação Física </p> <img class="img1" src="Imagens/edfis.jpg"> </th>
-            <th> <a href="a"> <p id="filo"> Filosofia e Sociologia </p> <img class="img1" src="Imagens/filo.jpg"> </th>
+            <th> <a href="threadMateria/bio.php"> <p id="bio"> Biologia </p> <img class="img1" src="Imagens/bio.jpg"> </a> </th>
+            <th> <a href="threadMateria/des.php"> <p id="des"> Desenho </p> <img class="img1" src="Imagens/des.jpg"> </th>
+            <th> <a href="threadMateria/edfis.php"> <p id="edfis"> Educação Física </p> <img class="img1" src="Imagens/edfis.jpg"> </th>
+            <th> <a href="threadMateria/filo.php"> <p id="filo"> Filosofia e Sociologia </p> <img class="img1" src="Imagens/filo.jpg"> </th>
           </tr>
           <tr>
-            <th> <a href="a"> <p id="fis"> Física </p> <img class="img1" src="Imagens/fis.jpg"> </a> </th>
-            <th> <a href="a"> <p id="geo"> Geografia </p> <img class="img1" src="Imagens/geo.jpg"> </a> </th>
-            <th> <a href="a"> <p id="his"> História </p> <img class="img1" src="Imagens/hist.jpg"> </a> </th>
-            <th> <a href="a"> <p id="info"> Informática </p> <img class="img1" src="Imagens/info.jpg"> </a> </th>
+            <th> <a href="threadMateria/fis.php"> <p id="fis"> Física </p> <img class="img1" src="Imagens/fis.jpg"> </a> </th>
+            <th> <a href="threadMateria/geo.php"> <p id="geo"> Geografia </p> <img class="img1" src="Imagens/geo.jpg"> </a> </th>
+            <th> <a href="threadMateria/his.php"> <p id="his"> História </p> <img class="img1" src="Imagens/hist.jpg"> </a> </th>
+            <th> <a href="threadMateria/info.php"> <p id="info"> Informática </p> <img class="img1" src="Imagens/info.jpg"> </a> </th>
           </tr>
           <tr>
-            <th> <a href="a"> <p id="le"> Lingua Estrangeira </p> <img class="img1" src="Imagens/le.jpg"> </a> </th>
-            <th> <a href="a"> <p id="mat"> Matemática </p> <img class="img1" src="Imagens/mat.jpg"> </a> </th>
-            <th> <a href="a"> <p id="port"> Português </p> <img class="img1" src="Imagens/port.jpg"> </a> </th>
-            <th> <a href="a"> <p id="qui"> Química </p> <img class="img1" src="Imagens/qui.jpg"> </a> </th>
+            <th> <a href="threadMateria/le.php"> <p id="le"> Lingua Estrangeira </p> <img class="img1" src="Imagens/le.jpg"> </a> </th>
+            <th> <a href="threadMateria/mat.php"> <p id="mat"> Matemática </p> <img class="img1" src="Imagens/mat.jpg"> </a> </th>
+            <th> <a href="threadMateria/port.php"> <p id="port"> Português </p> <img class="img1" src="Imagens/port.jpg"> </a> </th>
+            <th> <a href="threadMateria/qui.php"> <p id="qui"> Química </p> <img class="img1" src="Imagens/qui.jpg"> </a> </th>
           </tr>
 
         </table>
