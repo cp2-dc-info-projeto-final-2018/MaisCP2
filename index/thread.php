@@ -95,7 +95,7 @@
                 <div class=" row forumMod forumPad">
                     <div class="column">
                          <!-- <p id="descricao"><?= $thread['descricao'] ?></p> -->
-                         <pre id="descricao"><?= $thread['descricao'] ?></pre>
+                         <p id="descricao"><?= $thread['descricao'] ?></p>
                     </div>
                 </div>
 

@@ -1,3 +1,21 @@
+<?php
+require_once('Tabelas/ConexaoBd.php');
+require_once('Tabelas/TabelaUsuario.php');
+require_once('Tabelas/TabelaThread.php');
+session_start();
+
+if(array_key_exists('nomeUsuarioLogado', $_SESSION))
+{
+  $nomeUsuario = $_SESSION['nomeUsuarioLogado'];
+  $usuario = BuscaUsuario($nomeUsuario);
+}
+else
+{
+  $nomeUsuario = "Visitante";
+  $usuario = null;
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +37,6 @@
 
         <a class= "navBar TextoLink" href="inicio.php">Início</a>
         <a class= "navBar TextoLink" href="materias.php">Matérias</a>
-        <a class= "navBar TextoLink" href="a">Respostas</a>
         <a class= "navBar TextoLink" href="a">Perfil</a>
         <form class="searchBar" action="/action_page.php">
           <input class="textBusca"  type="text" action="Controle/Threads/pesquisar.php" placeholder="Pesquisar" name="pesquisar">
@@ -32,6 +49,7 @@
 
 
       <div class="direita">
+        <span class="navbar-text ml-auto">Olá, <?= $nomeUsuario?></span>
         <a  class= "btn btn-primary botao" href="index.php" title="Sair">Sair</a>
       </div>
     </div>

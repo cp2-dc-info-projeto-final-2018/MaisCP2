@@ -19,12 +19,13 @@
   $sql = $db->prepare(
     "SELECT titulo, thread_id, usuario.nomeUsuario AS autor
      FROM thread JOIN usuario ON thread.usuario_id = usuario.usuario_id;
-     WHERE disciplina = 7;
+
      "
   );
 
   $sql->execute();
   $listaThreads = ListaThreads();
+  $listaThreadsPorDisciplina = ListaThreadsPorDisciplina(5);
 
  ?>
 <!DOCTYPE html>
@@ -63,9 +64,9 @@
       <div class="direita">
         <span class="navbar-text ml-auto">Olá, <?= $nomeUsuario?></span>
         <?php if ($usuario == false) { ?>
-          <a  class= "btn btn-primary botao" href="cadastro.php" title="Cadastrar-se">Cadastre-se</a>
+          <a  class= "btn btn-primary botao" href="../cadastro.php" title="Cadastrar-se">Cadastre-se</a>
         <?php } ?>
-        <a  class= "btn btn-primary botao" href="Controle/sai.php" title="Saia">Sair</a>
+        <a  class= "btn btn-primary botao" href="../Controle/sai.php" title="Saia">Sair</a>
 
       </div>
     </div>
@@ -78,13 +79,13 @@
     <div class="row">
         <div class="col-lg-12  forumMod forumMargin">
               <div class="esquerda">
-                <h1>Língua Estrangeira</h1>
+                <h1>Línguas Estrangeiras</h1>
               </div>
 
               <div class="direita">
 
                 <?php if ($usuario != false) { ?>
-                  <a  class= "btn btn-primary botao" href="pergunta.php" title="Perguntar">Adicionar pergunta</a>
+                  <a  class= "btn btn-primary botao" href="../pergunta.php" title="Perguntar">Adicionar pergunta</a>
                 <?php } ?>
 
               </div>
@@ -95,14 +96,12 @@
                 <table id="table_threads" class="table">
                   <tr>
                       <th>Autor</th>
-                      <th>Disciplina</th>
                       <th> Título</th>
                   </tr>
-                  <?php foreach ($listaThreads as $thread) { ?>
+                  <?php foreach ($listaThreadsPorDisciplina as $thread) { ?>
                     <tr>
-                      <td><a href="thread.php?id=<?= $thread['usuario_id']?>"><?= $thread['nomeUsuario']?></a></td>
-                      <td><?= $thread['disciplina']?></a></td>
-                      <td><a href="thread.php?id=<?= $thread['thread_id']?>"><?= $thread['titulo']?></a></td>
+                      <td><a href="../thread.php?id=<?= $thread['usuario_id']?>"><?= $thread['nomeUsuario']?></a></td>
+                      <td><a href="../thread.php?id=<?= $thread['thread_id']?>"><?= $thread['titulo']?></a></td>
                     </tr>
                   <?php } ?>
                 </table>

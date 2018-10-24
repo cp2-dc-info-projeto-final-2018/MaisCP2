@@ -27,7 +27,10 @@
   );
 
   $sql->execute();
-  $listaThreads = ListaThreads();
+
+
+    $listaThreads = ListaThreads();
+
 
 
  ?>
@@ -52,10 +55,9 @@
 
         <a class= "navBar TextoLink" href="inicio.php">Início</a>
         <a class= "navBar TextoLink" href="materias.php">Matérias</a>
-        <a class= "navBar TextoLink" href="a">Respostas</a>
         <a class= "navBar TextoLink" href="a">Perfil</a>
-        <form class="searchBar" action="/action_page.php">
-          <input class="textBusca" method="POST" type="text" action="Controle/Threads/pesquisar.php?go" placeholder="Pesquisar" name="pesquisar">
+        <form class="searchBar" action="Controle/Threads/pesquisar.php">
+          <input class="textBusca" method="POST" type="text" placeholder="Pesquisar" name="pesquisar">
           <button type="submit"><i class="search fa fa-search"></i></button>
         </form>
 
@@ -99,7 +101,6 @@
                 <table id="table_threads" class="table">
                   <tr>
                       <th>Autor</th>
-                      <th>Disciplina</th>
                       <th> Título</th>
                   </tr>
                   <?php foreach ($listaThreads as $thread) { ?>

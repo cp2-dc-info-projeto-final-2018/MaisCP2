@@ -103,6 +103,7 @@
                           <option value="9">Educação Física</option>
                           <option value="10">Desenho</option>
                           <option value="11">Informática</option>
+                          <option value="12">Matemática</option>
                         </select>
                       </th>
 

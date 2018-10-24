@@ -110,7 +110,7 @@
 
 .searchBar{
 margin-top: -45px;
-margin-left: 860px;
+margin-left: 625px;
 
 
 }
@@ -222,9 +222,9 @@ font-size: 18px;
 }
 
 #descricao {
-    border-style:  solid;
-    border-color: lightgrey;
-    border-width: thin;
+    margin-left: 8%;
+    text-align: justify;
+
 }
 
 body{
