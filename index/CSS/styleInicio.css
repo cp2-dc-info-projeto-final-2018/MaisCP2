@@ -227,6 +227,25 @@ font-size: 18px;
 
 }
 
+#Resposta{
+  margin-left: 25px;
+  color: #316AB2;
+}
+
+#resposta{
+  width: 90%;
+}
+
+.resposta{
+  margin-left: 8%;
+
+}
+
+.btResp{
+  margin-left: 25px;
+
+}
+
 body{
   margin-top: 65px;
   margin-left: 10px;

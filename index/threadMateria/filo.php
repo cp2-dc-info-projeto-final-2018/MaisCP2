@@ -49,7 +49,6 @@
 
          <a class= "navBar TextoLink" href="../inicio.php">Início</a>
          <a class= "navBar TextoLink" href="../materias.php">Matérias</a>
-         <a class= "navBar TextoLink" href="a">Respostas</a>
          <a class= "navBar TextoLink" href="a">Perfil</a>
          <form class="searchBar" action="/action_page.php">
            <input class="textBusca" method="POST" type="text" action="Controle/Threads/pesquisar.php?go" placeholder="Pesquisar" name="pesquisar">
