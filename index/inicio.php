@@ -106,7 +106,7 @@
                   <?php foreach ($listaThreads as $thread) { ?>
                     <tr>
                       <td><a href="perfil.php?id=<?= $thread['usuario_id']?>"><?= $thread['nomeUsuario']?></a></td>
-                      <td><a href="thread.php?id=<?= $thread['thread_id']?>"><?= $thread['titulo']?></a></td>
+                      <td><a href="thread.php?thread_id=<?= $thread['thread_id']?>"><?= $thread['titulo']?></a></td>
                     </tr>
                   <?php } ?>
                 </table>

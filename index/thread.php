@@ -2,6 +2,9 @@
   require_once('Tabelas/ConexaoBd.php');
   require_once('Tabelas/TabelaUsuario.php');
   require_once('Tabelas/TabelaThread.php');
+  require_once('Tabelas/TabelaResposta.php');
+
+
   session_start();
 
   if(array_key_exists('nomeUsuarioLogado', $_SESSION))
@@ -17,16 +20,16 @@
 
   $db = CriaConexãoBd();
   $sql = $db->prepare(
-    "SELECT titulo, thread_id, usuario.nomeUsuario AS autor
+    "SELECT titulo, thread_id, usuario_id, usuario.nomeUsuario AS autor
      FROM thread JOIN usuario ON thread.usuario_id = usuario.usuario_id;"
   );
 
   $sql->execute();
 
   $listaThreads = ListaThreads();
-
-  $idThread = $_REQUEST['id'];
-  $thread= BuscaThread($idThread);
+  $thread_id = $_REQUEST['thread_id'];
+  $thread= BuscaThread($thread_id);
+  $listaResposta = ListaRespostaThread($thread['thread_id']);
 
  ?>
 <!DOCTYPE html>
@@ -83,21 +86,63 @@
                   <div class="esquerda column">
             			  <h1><?= $thread['titulo'] ?></h1>
             			</div>
-            		</div>
+            	</div>
 
-                <div class=" row forumMod forumPad">
-                  <div class=" column">
-                    <h3 id="autor">Autor: <a id="linkAutor"href="perfil.php?id=<?= $thread['usuario_id']?>"><?= $thread['nomeUsuario']?></a></h3>
-                    <h3 class="direita disciplina"> Disciplina: <?= $thread['disciplina']?> </h3>
-                  </div>
-              	</div>
+              <div class=" row forumMod forumPad">
+                <div class=" column">
+                  <h3 id="autor">Autor: <a id="linkAutor"href="perfil.php?id=<?= $thread['usuario_id']?>"><?= $thread['nomeUsuario']?></a></h3>
+                  <h3 class="direita disciplina"> Disciplina: <?= $thread['disciplina']?> </h3>
+                </div>
+              </div>
 
-                <div class=" row forumMod forumPad">
-                    <div class="column">
+              <div class=" row forumMod forumPad">
+                <div class="column">
                          <!-- <p id="descricao"><?= $thread['descricao'] ?></p> -->
                          <p id="descricao"><?= $thread['descricao'] ?></p>
-                    </div>
                 </div>
+              </div>
+
+              <h3 id="Resposta">Respostas: <?= count($listaResposta) ?></h3>
+              <ul class="list-group list-group-flush">
+                <?php foreach ($listaResposta as $resposta) { ?>
+                  <li class="list-group-item" id="resposta_<?= $resposta['usuario_id'] ?>">
+                    <p>
+                      <a href="perfil.php?id=<?= $resposta['usuario_id'] ?>"><?= $resposta['nomeUsuario'] ?></a>
+                    </p>
+
+                    <?php if ($resposta['resposta']) { ?>
+                      <p>"<?= $resposta['resposta'] ?>"</p>
+                    <?php } ?>
+
+                    <form action="Controlador/removerAvaliação.php" method="POST">
+                			<input name="local" type="hidden" value="<?= $_SERVER['REQUEST_URI'] ?>">
+                			<input name="thread_id" type="hidden" value="<?= $thread_id ?>">
+                			<input type="submit" value="Remover" class="botao btn primary button">
+                		</form>
+
+                  </li>
+                <?php } ?>
+              </ul>
+
+              <?php if ($nomeUsuario != null) { ?>
+
+                <form id="formResposta" name="formResposta" method="POST" action="Controle/Threads/responder.php">
+                  <input name="thread_id" type="hidden" value="<?= $thread_id?>">
+                  <input name="usuario_id" type="hidden" value="<?= $usuario_id?>">
+
+                  <div class="form-group">
+                  </div>
+                  <div class="resposta form-group">
+                    <label for="resposta">Resposta</label>
+                    <textarea id="resposta" class="form-control" name="resposta" maxlength="500"></textarea>
+                    <small>Máximo: 500 caracteres</small>
+                  </div>
+                  <input class="botao btRes btn primary button" type="submit" value="Responder">
+                </form>
+
+              <?php } else { ?>
+                <p><a href="cadastro.php">Cadastre-se</a> ou entre com a sua conta para responder essa thread.</p>
+              <?php } ?>
 
         </div>
     </div>
