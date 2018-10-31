@@ -4,9 +4,9 @@ require_once('../../Tabelas/TabelaResposta.php');
 
 session_start();
 
-if (array_key_exists('nomeUsuarioLogado', $_SESSION))
+if (array_key_exists('idUsuarioLogado', $_SESSION))
 {
-	$nomeUsuarioLogado = $_SESSION['nomeUsuarioLogado'];
+	$usuario_id = $_SESSION['idUsuarioLogado'];
 }
 else
 {
@@ -20,14 +20,13 @@ $erros = [];
 $request = array_map('trim', $_REQUEST);
 $request = filter_var_array(
                $request,
-               [ 'usuario_id' => FILTER_VALIDATE_INT,
+               [
 							   'thread_id' => FILTER_VALIDATE_INT,
                  'resposta' => FILTER_DEFAULT ]
            );
 
 
 $thread_id = $request['thread_id'];
-$usuario_id = $request['usuario_id'];
 
 if ($thread_id == false)
 {
@@ -37,7 +36,7 @@ if ($thread_id == false)
 
 if (empty($erros))
 {
-	InsereResposta($request['usuario_id'],
+	InsereResposta(	$usuario_id,
 	                $request['thread_id'],
 	                 $request['resposta']);
 

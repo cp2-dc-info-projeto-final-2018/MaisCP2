@@ -11,9 +11,8 @@ $sql->bindValue(':termoPesquisa', "%$pesquisar%");
 
 $sql->execute();
 
-return $sql->fetch();
+return $sql->fetchAll();
 }
-
 ?>
 
 

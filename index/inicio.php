@@ -28,8 +28,15 @@
 
   $sql->execute();
 
+  /* if (termo que o usuario digitou na pesquisa != null){
+      $listaThreads =BuscaThreadsPorTermo();
+    }
+    else{
+      $listaThreads = ListaThreads();
+    }
+  */
 
-    $listaThreads = ListaThreads();
+  $listaThreads = ListaThreads();
 
 
 
@@ -56,7 +63,7 @@
         <a class= "navBar TextoLink" href="inicio.php">Início</a>
         <a class= "navBar TextoLink" href="materias.php">Matérias</a>
         <a class= "navBar TextoLink" href="a">Perfil</a>
-        <form class="searchBar" action="Controle/Threads/pesquisar.php">
+        <form class="searchBar" action="pesquisa.php">
           <input class="textBusca" method="POST" type="text" placeholder="Pesquisar" name="pesquisar">
           <button type="submit"><i class="search fa fa-search"></i></button>
         </form>

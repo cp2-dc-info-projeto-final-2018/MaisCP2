@@ -4,9 +4,9 @@ require_once('../../Tabelas/TabelaResposta.php');
 
 session_start();
 
-if (array_key_exists('nomeUsuarioLogado', $_SESSION))
+if (array_key_exists('idUsuarioLogado', $_SESSION))
 {
-	$nomeUsuarioLogado = $_SESSION['nomeUsuarioLogado'];
+	$usuario_id = $_SESSION['idUsuarioLogado'];
 }
 else
 {
@@ -33,13 +33,13 @@ if ($thread_id == false)
 
 if ($erros == null)
 {
-	RemoveResposta($nomeUsuarioLogado, $thread_id);
+	RemoveResposta($usuario_id, $thread_id);
+	header("Location:../../thread.php?thread_id=$thread_id");
 }
 else
 {
 	$_SESSION['erroRemoverAvaliação'] = $erros;
 }
 
-header("Location: $request['local']");
 
 ?>

@@ -18,9 +18,14 @@
     $usuario = null;
   }
 
+  if(array_key_exists('idUsuarioLogado', $_SESSION))
+  {
+    $usuario_id = $_SESSION['idUsuarioLogado'];
+  }
+
   $db = CriaConexãoBd();
   $sql = $db->prepare(
-    "SELECT titulo, thread_id, usuario_id, usuario.nomeUsuario AS autor
+    "SELECT titulo, thread_id, thread.usuario_id, usuario.nomeUsuario AS autor
      FROM thread JOIN usuario ON thread.usuario_id = usuario.usuario_id;"
   );
 
@@ -53,10 +58,9 @@
 
         <a class= "navBar TextoLink" href="inicio.php">Início</a>
         <a class= "navBar TextoLink" href="materias.php">Matérias</a>
-        <a class= "navBar TextoLink" href="a">Respostas</a>
         <a class= "navBar TextoLink" href="a">Perfil</a>
-        <form class="searchBar" action="/action_page.php">
-          <input class="textBusca" method="POST" type="text" action="Controle/Threads/pesquisar.php" placeholder="Pesquisar" name="pesquisar">
+        <form class="searchBar" action="pesquisar.php">
+          <input class="textBusca" method="POST" type="text" action="pesquisar.php" placeholder="Pesquisar" name="pesquisar">
           <button type="submit"><i class="search fa fa-search"></i></button>
         </form>
 
@@ -67,7 +71,7 @@
 
       <div class="direita">
         <span class="navbar-text ml-auto">Olá, <?= $nomeUsuario?></span>
-        <?php if ($nomeUsuario = "Visitante") { ?>
+        <?php if ($usuario_id == null) { ?>
           <a  class= "btn btn-primary botao" href="cadastro.php" title="Cadastrar-se">Cadastre-se</a>
         <?php } ?>
         <a  class= "btn btn-primary botao" href="Controle/sai.php" title="Saia">Sair</a>
@@ -114,12 +118,13 @@
                       <p>"<?= $resposta['resposta'] ?>"</p>
                     <?php } ?>
 
-                    <form action="Controlador/removerAvaliação.php" method="POST">
-                			<input name="local" type="hidden" value="<?= $_SERVER['REQUEST_URI'] ?>">
-                			<input name="thread_id" type="hidden" value="<?= $thread_id ?>">
-                			<input type="submit" value="Remover" class="botao btn primary button">
-                		</form>
-
+                    <?php if ($resposta['usuario_id'] == $usuario_id) { ?>
+                      <form action="Controle/Threads/removerResposta.php" method="POST">
+                  			<input name="local" type="hidden" value="<?= $_SERVER['REQUEST_URI'] ?>">
+                  			<input name="thread_id" type="hidden" value="<?= $thread_id ?>">
+                  			<input type="submit" value="Remover" class="botao btn primary button">
+                  		</form>
+                    <?php } ?>
                   </li>
                 <?php } ?>
               </ul>
@@ -128,13 +133,11 @@
 
                 <form id="formResposta" name="formResposta" method="POST" action="Controle/Threads/responder.php">
                   <input name="thread_id" type="hidden" value="<?= $thread_id?>">
-                  <input name="usuario_id" type="hidden" value="<?= $usuario_id?>">
-
                   <div class="form-group">
                   </div>
                   <div class="resposta form-group">
                     <label for="resposta">Resposta</label>
-                    <textarea id="resposta" class="form-control" name="resposta" maxlength="500"></textarea>
+                    <textarea id="resposta" class="form-control" name="resposta" minlenght="10" maxlength="500" required></textarea>
                     <small>Máximo: 500 caracteres</small>
                   </div>
                   <input class="botao btRes btn primary button" type="submit" value="Responder">
