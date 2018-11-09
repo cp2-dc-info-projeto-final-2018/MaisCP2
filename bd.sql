@@ -1,3 +1,5 @@
+CREATE DATABASE MaisCP2;
+
 use MaisCP2;
 
 CREATE TABLE usuario(
