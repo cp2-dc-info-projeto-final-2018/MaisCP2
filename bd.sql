@@ -5,7 +5,7 @@ use MaisCP2;
 CREATE TABLE usuario(
 usuario_id int auto_increment not null,
 nomeCompleto varchar(30) not null,
-senha varchar(12) not null,
+senha varchar(100) not null,
 matricula varchar(9) not null,
 professor_id int,
 aluno_id int,
