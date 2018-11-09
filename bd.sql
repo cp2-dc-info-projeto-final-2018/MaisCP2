@@ -9,6 +9,8 @@ senha varchar(12) not null,
 matricula varchar(9) not null,
 professor_id int,
 aluno_id int,
+email varchar(30) not null,
+nomeUsuario varchar(30) not null,
 PRIMARY KEY(usuario_id)
 );
 
