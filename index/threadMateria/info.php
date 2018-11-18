@@ -84,7 +84,7 @@
      <div class="row">
          <div class="col-lg-12  forumMod forumMargin">
                <div class="esquerda">
-                 <h1>Técnico</h1>
+                 <h1>Informática</h1>
                </div>
 
                <div class="direita">

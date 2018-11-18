@@ -83,7 +83,7 @@ if (empty($_REQUEST['pesquisar']) == false){
             <th> <a href="threadMateria/fis.php"> <p id="fis"> Física </p> <img class="img1" src="Imagens/fis.jpg"> </a> </th>
             <th> <a href="threadMateria/geo.php"> <p id="geo"> Geografia </p> <img class="img1" src="Imagens/geo.jpg"> </a> </th>
             <th> <a href="threadMateria/his.php"> <p id="his"> História </p> <img class="img1" src="Imagens/hist.jpg"> </a> </th>
-            <th> <a href="threadMateria/info.php"> <p id="info"> Técnico </p> <img class="img1" src="Imagens/info.jpg"> </a> </th>
+            <th> <a href="threadMateria/info.php"> <p id="info"> Informática </p> <img class="img1" src="Imagens/info.jpg"> </a> </th>
           </tr>
           <tr>
             <th> <a href="threadMateria/le.php"> <p id="le"> Lingua Estrangeira </p> <img class="img1" src="Imagens/le.jpg"> </a> </th>
