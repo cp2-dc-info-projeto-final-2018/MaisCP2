@@ -54,7 +54,7 @@
           </div>
 
 
-          <input type="submit" class="botao bt btn primary-button" value="Entrar"/>
+          <input type="submit" class="botao btn btn-primary" value="Entrar"/>
         </form>
     </div>
 

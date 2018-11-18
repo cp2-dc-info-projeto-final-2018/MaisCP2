@@ -1,6 +1,6 @@
 body
 {
-  background-image: url("../Imagens/background.png");
+  background-image: url("../Imagens/back.jpg");
 
 }
 
@@ -45,7 +45,6 @@ body
 
 }
 .botao{
-background-color: #316AB2;
 margin-left:100px;
 color:white;
 

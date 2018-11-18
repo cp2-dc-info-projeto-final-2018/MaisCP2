@@ -55,9 +55,23 @@
       $sql -> execute();
 
       return $sql -> fetch();
-
-
   }
 
+  function BuscaUsuarioPorId(int $id)
+  {
+
+    $db = CriaConexãoBd();
+
+    $sql = $db->prepare(
+      "SELECT * FROM usuario WHERE usuario_id = :id;"
+    );
+
+      $sql->bindValue(':id', $id );
+
+
+      $sql -> execute();
+
+      return $sql -> fetch();
+  }
 
 ?>

@@ -32,28 +32,48 @@
   	return $resultado->fetchAll();
   }
 
-  function ListaThreadsPorDisciplina($disciplina) {
-    $where = null;
-
-    if ($disciplina != null ) {
-      $where = "WHERE disciplina = $disciplina";
-    } else if ($busca != null) {
-      $where = "WHERE titulo LIKE '%$busca%' OR descricao LIKE '%$busca%'";
-    }
-
+  function ListaThreadsPorUsuario(int $usuario_id) : array
+  {
     $bd = CriaConexãoBd();
 
-  	$resultado = $bd->query
-    ("SELECT thread.*, usuario.nomeUsuario AS nomeUsuario
+    $sql = $bd->prepare
+    ('SELECT thread.*, usuario.nomeUsuario AS nomeUsuario
       FROM thread
       INNER JOIN usuario ON usuario.usuario_id = thread.usuario_id
-      $where");
+      WHERE usuario.usuario_id = :usuario_id');
 
-  	return $resultado->fetchAll();
+      $sql->bindValue(':usuario_id', $usuario_id);
+
+      $sql->execute();
+      return $sql->fetchAll();
   }
 
+  function ListaThreadsPorDisciplina($disciplina) {
 
-  function BuscaThread(int $thread_id) : array
+  $where = null;
+
+  if ($disciplina != null )
+  {
+    $where = "WHERE disciplina = $disciplina";
+  }
+  else if ($busca != null)
+  {
+    $where = "WHERE titulo LIKE '%$busca%' OR descricao LIKE '%$busca%'";
+  }
+
+  $bd = CriaConexãoBd();
+
+  $resultado = $bd->query
+  ("SELECT thread.*, usuario.nomeUsuario AS nomeUsuario
+    FROM thread
+    INNER JOIN usuario ON usuario.usuario_id = thread.usuario_id
+    $where");
+
+  return $resultado->fetchAll();
+}
+
+
+  function BuscaThread(int $thread_id)
   {
   	$bd = CriaConexãoBd();
 
@@ -69,5 +89,19 @@
 
   	return $sql->fetch();
   }
+
+  function RemoveThread(int $thread_id)
+  {
+  	$bd = CriaConexãoBd();
+
+  	$sql = $bd->prepare('DELETE FROM postagem WHERE thread_id = :valthread_id;
+                         DELETE FROM thread   WHERE thread_id = :valthread_id'
+                       );
+
+  	$sql->bindValue(':valthread_id', $thread_id);
+
+  	$sql->execute();
+  }
+
 
 ?>

@@ -36,7 +36,7 @@
 
         <label><input name="alertasEmail" type="checkbox"/>Receber alertas por e-mail.</label><br/>
 
-      </br><input class ="botao btn bt primarybutton" type="submit" value="Criar conta"/>
+      </br><input class ="botao btn btn-primary" type="submit" value="Criar conta"/>
 
       </form>
     </div>

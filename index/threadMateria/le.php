@@ -27,6 +27,13 @@
   $listaThreads = ListaThreads();
   $listaThreadsPorDisciplina = ListaThreadsPorDisciplina(5);
 
+  if (empty($_REQUEST['pesquisar']) == false){
+     $listaThreads =BuscaThreadsPorTermo($_REQUEST['pesquisar']);
+   }
+   else{
+     $listaThreads = ListaThreads();
+   }
+
  ?>
 <!DOCTYPE html>
 
@@ -49,13 +56,11 @@
 
         <a class= "navBar TextoLink" href="../inicio.php">Início</a>
         <a class= "navBar TextoLink" href="../materias.php">Matérias</a>
-        <a class= "navBar TextoLink" href="a">Respostas</a>
-        <a class= "navBar TextoLink" href="a">Perfil</a>
-        <form class="searchBar" action="/action_page.php">
-          <input class="textBusca" method="POST" type="text" action="Controle/Threads/pesquisar.php?go" placeholder="Pesquisar" name="pesquisar">
+        <a class= "navBar TextoLink" href="../perfil.php">Perfil</a>
+        <form class="searchBar" action="../inicio.php">
+          <input class="textBusca"  type="text"  placeholder="Pesquisar" name="pesquisar">
           <button type="submit"><i class="search fa fa-search"></i></button>
         </form>
-
 
       </div>
 
@@ -101,7 +106,7 @@
                   <?php foreach ($listaThreadsPorDisciplina as $thread) { ?>
                     <tr>
                       <td><a href="../thread.php?id=<?= $thread['usuario_id']?>"><?= $thread['nomeUsuario']?></a></td>
-                      <td><a href="../thread.php?id=<?= $thread['thread_id']?>"><?= $thread['titulo']?></a></td>
+                      <td><a href="../thread.php?thread_id=<?= $thread['thread_id']?>"><?= $thread['titulo']?></a></td>
                     </tr>
                   <?php } ?>
                 </table>

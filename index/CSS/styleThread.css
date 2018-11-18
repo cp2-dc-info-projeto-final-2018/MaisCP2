@@ -60,20 +60,19 @@
 
 
 .botao{
-
+  background-color: #316AB2;
   color: white;
-
+  border-color: black;
   border-width: thin;
   font-weight: 400;
   margin-left: 15px;
   margin-right: 45px;
   margin-top: 10px;
   margin-bottom: 10px;
-  #F9B240
 }
 
 .botao:hover{
-
+  background-color: #F9B240;;
   color: white;
   border-color: white;
 
@@ -110,7 +109,7 @@
 
 .searchBar{
 margin-top: -45px;
-margin-left: 625px;
+margin-left: 860px;
 
 
 }
@@ -238,7 +237,7 @@ body{
 
   margin-bottom: 65px;
   background-color: #f2f2f2;
-  font-family: "Georgia", Georgia, serif;
+
 
 }
 

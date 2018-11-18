@@ -46,8 +46,7 @@
 
         <a class= "navBar TextoLink" href="inicio.php">Início</a>
         <a class= "navBar TextoLink" href="materias.php">Matérias</a>
-        <a class= "navBar TextoLink" href="a">Respostas</a>
-        <a class= "navBar TextoLink" href="a">Perfil</a>
+        <a class= "navBar TextoLink" href="perfil.php">Perfil</a>
         <form class="searchBar" action="/action_page.php">
           <input class="textBusca"  type="text" action="Controle/Threads/pesquisar.php" placeholder="Pesquisar" name="pesquisar">
           <button type="submit"><i class="search fa fa-search"></i></button>
@@ -102,7 +101,7 @@
                           <option value="8">Física</option>
                           <option value="9">Educação Física</option>
                           <option value="10">Desenho</option>
-                          <option value="11">Informática</option>
+                          <option value="11">Técnico</option>
                           <option value="12">Matemática</option>
                         </select>
                       </th>
@@ -131,7 +130,7 @@
 
                     <tr>
                       <th>
-                        <input class ="botao btn bt primarybutton" type="submit" value="Perguntar"/>
+                        <input class ="botao btn btn-primary" type="submit" value="Perguntar"/>
                       </th>
                     </tr>
 

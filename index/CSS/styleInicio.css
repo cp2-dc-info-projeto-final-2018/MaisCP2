@@ -60,9 +60,9 @@
 
 
 .botao{
-  background-color: #316AB2;
+
   color: white;
-  border-color: black;
+
   border-width: thin;
   font-weight: 400;
   margin-left: 15px;
@@ -73,7 +73,7 @@
 }
 
 .botao:hover{
-  background-color: #F9B240;;
+
   color: white;
   border-color: white;
 
@@ -226,6 +226,31 @@ font-size: 18px;
     text-align: justify;
 
 }
+
+#Resposta{
+  margin-left: 25px;
+  color: #316AB2;
+}
+
+#resposta{
+  width: 90%;
+}
+
+.resposta{
+  margin-left: 8%;
+
+}
+
+.btResp{
+  margin-left: 25px;
+
+}
+
+.remove{
+  margin-top: -75px;
+  margin-left: 960px;
+}
+
 
 body{
   margin-top: 65px;

@@ -1,7 +1,7 @@
 <?php
-  require_once('Tabelas/ConexaoBd.php');
   require_once('Tabelas/TabelaUsuario.php');
   require_once('Tabelas/TabelaThread.php');
+  require_once('pesquisa.php');
   session_start();
 
   if(array_key_exists('nomeUsuarioLogado', $_SESSION))
@@ -15,23 +15,12 @@
     $usuario = null;
   }
 
-  $db = CriaConexãoBd();
-  $sql = $db->prepare(
-    "SELECT titulo, thread_id, disciplina.nome, usuario.nomeUsuario AS autor
-     FROM thread
-     INNER JOIN usuario ON thread.usuario_id = usuario.usuario_id
-     INNER JOIN disciplina ON thread.disciplina = disciplina.disciplina_id;
-
-     "
-
-  );
-
-  $sql->execute();
-
-
-    $listaThreads = ListaThreads();
-
-
+   if (empty($_REQUEST['pesquisar']) == false){
+      $listaThreads =BuscaThreadsPorTermo($_REQUEST['pesquisar']);
+    }
+    else{
+      $listaThreads = ListaThreads();
+    }
 
  ?>
 <!DOCTYPE html>
@@ -55,8 +44,8 @@
 
         <a class= "navBar TextoLink" href="inicio.php">Início</a>
         <a class= "navBar TextoLink" href="materias.php">Matérias</a>
-        <a class= "navBar TextoLink" href="a">Perfil</a>
-        <form class="searchBar" action="Controle/Threads/pesquisar.php">
+        <a class= "navBar TextoLink" href="perfil.php">Perfil</a>
+        <form class="searchBar">
           <input class="textBusca" method="POST" type="text" placeholder="Pesquisar" name="pesquisar">
           <button type="submit"><i class="search fa fa-search"></i></button>
         </form>
@@ -78,8 +67,6 @@
   </div>
 </div>
 
-
-<body>
   <div class="container">
     <div class="row">
         <div class="col-lg-12  forumMod forumMargin">
@@ -90,7 +77,7 @@
               <div class="direita">
 
                 <?php if ($usuario != false) { ?>
-                  <a  class= "btn btn-primary botao" href="pergunta.php" title="Perguntar">Adicionar pergunta</a>
+                  <a  class= "botao btn btn-primary botao" href="pergunta.php" title="Perguntar">Adicionar pergunta</a>
                 <?php } ?>
 
               </div>
@@ -106,7 +93,7 @@
                   <?php foreach ($listaThreads as $thread) { ?>
                     <tr>
                       <td><a href="perfil.php?id=<?= $thread['usuario_id']?>"><?= $thread['nomeUsuario']?></a></td>
-                      <td><a href="thread.php?id=<?= $thread['thread_id']?>"><?= $thread['titulo']?></a></td>
+                      <td><a href="thread.php?thread_id=<?= $thread['thread_id']?>"><?= $thread['titulo']?></a></td>
                     </tr>
                   <?php } ?>
                 </table>

@@ -2,6 +2,7 @@
 require_once('Tabelas/ConexaoBd.php');
 require_once('Tabelas/TabelaUsuario.php');
 require_once('Tabelas/TabelaThread.php');
+require_once('pesquisa.php');
 session_start();
 
 if(array_key_exists('nomeUsuarioLogado', $_SESSION))
@@ -15,7 +16,15 @@ else
   $usuario = null;
 }
 
+if (empty($_REQUEST['pesquisar']) == false){
+   $listaThreads =BuscaThreadsPorTermo($_REQUEST['pesquisar']);
+ }
+ else{
+   $listaThreads = ListaThreads();
+ }
+
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,9 +46,9 @@ else
 
         <a class= "navBar TextoLink" href="inicio.php">Início</a>
         <a class= "navBar TextoLink" href="materias.php">Matérias</a>
-        <a class= "navBar TextoLink" href="a">Perfil</a>
-        <form class="searchBar" action="/action_page.php">
-          <input class="textBusca"  type="text" action="Controle/Threads/pesquisar.php" placeholder="Pesquisar" name="pesquisar">
+        <a class= "navBar TextoLink" href="perfil.php">Perfil</a>
+        <form class="searchBar" action="inicio.php">
+          <input class="textBusca"  type="text"  placeholder="Pesquisar" name="pesquisar">
           <button type="submit"><i class="search fa fa-search"></i></button>
         </form>
 
@@ -50,7 +59,7 @@ else
 
       <div class="direita">
         <span class="navbar-text ml-auto">Olá, <?= $nomeUsuario?></span>
-        <a  class= "btn btn-primary botao" href="index.php" title="Sair">Sair</a>
+        <a  class= "botao btn btn-primary" href="index.php" title="Sair">Sair</a>
       </div>
     </div>
   </div>
@@ -74,7 +83,7 @@ else
             <th> <a href="threadMateria/fis.php"> <p id="fis"> Física </p> <img class="img1" src="Imagens/fis.jpg"> </a> </th>
             <th> <a href="threadMateria/geo.php"> <p id="geo"> Geografia </p> <img class="img1" src="Imagens/geo.jpg"> </a> </th>
             <th> <a href="threadMateria/his.php"> <p id="his"> História </p> <img class="img1" src="Imagens/hist.jpg"> </a> </th>
-            <th> <a href="threadMateria/info.php"> <p id="info"> Informática </p> <img class="img1" src="Imagens/info.jpg"> </a> </th>
+            <th> <a href="threadMateria/info.php"> <p id="info"> Técnico </p> <img class="img1" src="Imagens/info.jpg"> </a> </th>
           </tr>
           <tr>
             <th> <a href="threadMateria/le.php"> <p id="le"> Lingua Estrangeira </p> <img class="img1" src="Imagens/le.jpg"> </a> </th>
