@@ -35,7 +35,7 @@ O projeto que foi escolhido será um fórum educacional. Ou seja, um fórum onde
 
 ### Casos de uso
 
-![Diagrama de casos de uso](casosDeUso.png)
+![Diagrama de casos de uso](Documentação/casosDeUso.png)
 
 [Descrição dos casos de uso](https://github.com/cp2-dc-info-projeto-final-2018/MaisCP2/blob/master/Documenta%C3%A7%C3%A3o/casosDeUso.md)
 
@@ -43,7 +43,7 @@ O projeto que foi escolhido será um fórum educacional. Ou seja, um fórum onde
 
 Diagrama de classes
 
-![Diagrama de classes](diagramaDeClasse.png)
+![Diagrama de classes](Documentação/diagramaDeClasse.png)
 
 Modelo do Banco de Dados
 
@@ -54,27 +54,27 @@ Modelo do Banco de Dados
 
 Caso o usuário já tenha uma conta ele poderá fazer o login na página principal do site.
 
-![Login](Telas/index.png)
+![Login](Documentação/Telas/index.png)
 
 Caso o usuário não tenha uma conta ele poderá se cadastrar na página de cadastro, que pode ser acessada através da página principal.
 
-![Cadastro](Telas/cadastro.png)
+![Cadastro](Documentação/Telas/cadastro.png)
 
 Após cadastrar-se e efetuar o login, o usuário será direcionado para a página principal, onde ele pode acessar as threads que já foram criadas e os perfis que já fizeram uma thread.
 
-![Inicio](Telas/inicio.png)
+![Inicio](Documentação/Telas/inicio.png)
 
 O usuário pode adicionar threads utilizando o botão "Adicionar Thread". Ao preencher os dados no formulário e enviá-lo, a thread terá sido enviada com sucesso para a página principal do site e para a página de sua respectiva matéria.
 
-![Adicionar Thread](Telas/pergunta.png)
+![Adicionar Thread](Documentação/Telas/pergunta.png)
 
 Ao clicar em "Matérias" o usuário será direcionado para a página de exibição das diferentes disciplinas. Ao clicar em qualquer uma das opções, o usuário será direcionado para uma página onde só estão threads da matéria selecionada.
 
-![Matérias](Telas/materias.png)
+![Matérias](Documentação/Telas/materias.png)
 
 Para acessar seu Perfil, basta clicar no link "Perfil"
 
-![Perfil](Telas/perfil.png)
+![Perfil](Documentação/Telas/perfil.png)
 
 E para efetuar uma pesquisa por uma thread específica, basta utilizar o campo "Pesquisar" que está disponível em todo o site.
 
