@@ -1,8 +1,8 @@
-#MaisCP2
+# MaisCP2
 
 ## Projeto Final do Curso Técnico em Informática do Colégio Pedro II – Campus Duque de Caxias – 2018
 
-### Integrantes:
+## Integrantes:
 
 - Daniel Moreira dos Passos
 
@@ -12,44 +12,45 @@
 
 - Rosa Silveira Pereira
 
-### Sumário
+## Sumário
 
 - [Proposta](#proposta)
 - [Casos de uso](#casos-de-uso)
 - [Modelagem](#modelagem)
 - [Manual](#manual)
 
+### Proposta
 
-
-
-
-#### Proposta
-
-##### Descrição
+#### Descrição
 
 O projeto que foi escolhido será um fórum educacional. Ou seja, um fórum onde serão discutidos assuntos acadêmicos de alunos e professores, majoritariamente do Colégio Pedro II: podendo ser provas, dúvidas, ajuda em matérias específicas e etc., porém sempre presando antes de mais nada o debate. O fórum será dividido em matérias, tendo em vista que será melhor para a organização do site. Os usuários podem criar threads de discussão e responder a essas threads, enquanto um visitante só pode visualizá-las. O projeto busca fornecer uma plataforma de discussão e debate para alunos e professores, principalmente do Colégio Pedro II, onde as mais diversas questões acadêmicas possam ser debatidas. O intuito da plataforma é prezar pela discussão e o debate saudável entre os integrantes da comunidade, sem hierarquizá-los, para ampliar as discussões acadêmicas para fora da sala de aula.
 
-##### Stakeholder
+#### Stakeholder
 
 - Gabriel Uriel - Professor de Biologia do Colégio Pedro II - Campus Duque de Caxias
 
-##### Link para os requisitos
+#### Link para os requisitos
 
-[Requisitos funcionais e não funcionais] ()
+[Requisitos funcionais e não funcionais](https://github.com/cp2-dc-info-projeto-final-2018/MaisCP2/blob/master/Documenta%C3%A7%C3%A3o/requisitos.md)
 
-#### Casos de uso
+### Casos de uso
 
 ![Diagrama de casos de uso](casosDeUso.png)
 
-[Descrição dos casos de uso] ()
+[Descrição dos casos de uso](https://github.com/cp2-dc-info-projeto-final-2018/MaisCP2/blob/master/Documenta%C3%A7%C3%A3o/casosDeUso.md)
 
-#### Modelagem
+### Modelagem
+
+Diagrama de classes
 
 ![Diagrama de classes](diagramaDeClasse.png)
 
-![Banco de dados](bd.png)
+Modelo do Banco de Dados
 
-#### Manual
+![Banco de dados](bd.png)
+[script banco de dados](https://github.com/cp2-dc-info-projeto-final-2018/MaisCP2/blob/master/Documenta%C3%A7%C3%A3o/bd.sql)
+
+### Manual
 
 Caso o usuário já tenha uma conta ele poderá fazer o login na página principal do site.
 
@@ -75,6 +76,6 @@ Para acessar seu Perfil, basta clicar no link "Perfil"
 
 ![Perfil](Telas/perfil.png)
 
-E para efetuar uma pesquisa por uma thread específica, basta utilizar o campo "Pesquisa" que está disponível em todo o site.
+E para efetuar uma pesquisa por uma thread específica, basta utilizar o campo "Pesquisar" que está disponível em todo o site.
 
 Caso o usuário deseje sair do site, basta clicar no botão "Sair" a qualquer momento.
