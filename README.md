@@ -47,8 +47,8 @@ Diagrama de classes
 
 Modelo do Banco de Dados
 
-![Banco de dados](bd.png)
-[script banco de dados](https://github.com/cp2-dc-info-projeto-final-2018/MaisCP2/blob/master/Documenta%C3%A7%C3%A3o/bd.sql)
+![Banco de dados](Documentação/bd.png)
+[Script do banco de dados](https://github.com/cp2-dc-info-projeto-final-2018/MaisCP2/blob/master/Documenta%C3%A7%C3%A3o/bd.sql)
 
 ### Manual
 
