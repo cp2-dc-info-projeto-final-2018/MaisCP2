@@ -14,9 +14,9 @@
 ## Requisitos Não Funcionais
 
 - [RNF01 - Tempo de Resposta](#rnf01---tempo-de-resposta)
-- [RNF02 - Interface](#rf02---interface)
-- [RNF03 - Refresh](#rf03---refresh)
-- [RNF04 - Responsivo](#cd04---responsivo)
+- [RNF02 - Interface](#rnf02---interface)
+- [RNF03 - Refresh](#rnf03---refresh)
+- [RNF04 - Responsivo](#rnf04---responsivo)
 
 
 
