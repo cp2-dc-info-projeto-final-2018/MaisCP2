@@ -7,7 +7,7 @@
 - [RF01 - Cadastro](#rf01---cadastro)
 - [RF02 - Criação de Threads](#rf02---criação-de-threads)
 - [RF03 - Organização](#rf03---organização)
-- [RF04 - Especificação ](#cd04---especificação)
+- [RF04 - Especificação ](#rf04---especificação)
 
 
 
