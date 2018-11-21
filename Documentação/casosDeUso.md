@@ -6,7 +6,7 @@
 - [CDU 02 - Autenticar](#cd02---autenticar)
 - [CDU 03 - Visualizar Atividade](#cd03---visualizar-atividade)
 - [CDU 04 - Pesquisar Thread](#cd04---pesquisar-thread)
-- [CDU 05 - Manter Thread](#cd05---manter-thread)
+- [CDU 05 - Manter Threads](#cd05---manter-threads)
 - [CDU 06 - Manter Postagens](#cd06---manter-postagens)
 
 
