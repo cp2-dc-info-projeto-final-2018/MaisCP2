@@ -27,7 +27,7 @@ O projeto que foi escolhido será um fórum educacional. Ou seja, um fórum onde
 
 #### Stakeholder
 
-- Gabriel Uriel - Professor de Biologia do Colégio Pedro II - Campus Duque de Caxias
+- Gabriel Araújo - Professor de Biologia do Colégio Pedro II - Campus Duque de Caxias
 
 #### Link para os requisitos
 
