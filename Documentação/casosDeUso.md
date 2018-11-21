@@ -4,10 +4,10 @@
 
 - [CDU 01 - Cadastrar](#cd01---cadastrar)
 - [CDU 02 - Autenticar](#cd02---autenticar)
-- [CDU 03 - Visualizar Atividade](#cd04---visualizar-atividade)
-- [CDU 04 - Pesquisar Thread](#cd05---pesquisar-thread)
-- [CDU 05 - Manter Thread](#cd06---manter-thread)
-- [CDU 06 - Manter Postagens](#cd07---manter-postagens)
+- [CDU 03 - Visualizar Atividade](#cd03---visualizar-atividade)
+- [CDU 04 - Pesquisar Thread](#cd04---pesquisar-thread)
+- [CDU 05 - Manter Thread](#cd05---manter-thread)
+- [CDU 06 - Manter Postagens](#cd06---manter-postagens)
 
 
 
