@@ -9,7 +9,7 @@
 - [RF03 - Organização](#rf03---organização)
 - [RF04 - Especificação ](#cd04---especificação)
 - [RF05 - Anexos](#cd05---anexo)
-- [RF06 - Notificação](#cd06---notificação)
+
 
 ## Requisitos Não Funcionais
 
@@ -34,12 +34,6 @@
 ### RF04 - Especificação
   As threads de discussão deverão ter disciplina que a discussão pertence.
 
-### RF05 - Anexos
-  Permitir o anexo de PDFs, imagens e links aos posts.
-
-### RF06 - Notificação
-  Quando alguém responder um comentário da thread, a pessoa que fez a postagem será notificado do mesmo.
-
 ## Requisitos Não Funcionais
 
 ### RNF01 - Tempo de Resposta
@@ -50,6 +44,3 @@
 
 ### RNF03 - Refresh
   O tempo de refresh do site deve ser de, no máximo, 1 segundo.
-
-### RNF04 - Responsivo
-  O site deverá ser responsivo.
